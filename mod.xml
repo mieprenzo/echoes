@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mod>
     <name>Echoes</name>
-    <description>[color=043d01]Echoes[/color] is a mod by MixOnUs & MeepRenzo</description>
+    <description>[color=043d01]Echoes[/color] is a mod by MixOnUs &amp; MeepRenzo</description>
     <author>MixOnUs & MeepRenzo</author>
     <version>1.0.0</version>
     <init>
-            <section if="player.getFlag('final_boss_defeat')">
+        <npc id="president" extends="president">
+		<operate>
+            <section if="getFlag('final_boss_defeat')">
                 <action>trace("game finished");</action>
+                <!-- TODO: create a quest -->
             </section>
+        </operate>
     </init>
 </mod>
