@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mod>
+    <name>VUF Renewed</name>
+    <description>Vehicle Upgrade Framework. Original one by gASK and extended by MeepRenzo</description>
+    <author>gASK & MeepRenzo</author>
+    <version>1.0.0</version>
+    <init>
+        <include id="vuf.xml" />
+    </init>
+</mod>
