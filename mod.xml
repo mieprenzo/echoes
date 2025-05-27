@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mod>
     <name>Echoes</name>
-    <description>[color=ff2222]Echoes[/color] is a mod by MixOnUs & MeepRenzo</description>
+    <description>[color=043d01]Echoes[/color] is a mod by MixOnUs & MeepRenzo</description>
     <author>MixOnUs & MeepRenzo</author>
     <version>1.0.0</version>
     <init>
-        
+            <section if="player.getFlag('final_boss_defeat')">
+                <action>trace("game finished");</action>
+            </section>
     </init>
 </mod>
