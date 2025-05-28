@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <mod>
     <name>Echoes</name>
     <description>[color=043d01]Echoes[/color] is a mod by MixOnUs &amp; MeepRenzo</description>
     <author>MixOnUs & MeepRenzo</author>
     <version>1.0.0</version>
     <init>
-        <npc id="president" extends="president">
-		<operate>
-            <section if="getFlag('final_boss_defeat')">
-                <action>trace("game finished");</action>
-                <!-- TODO: create a quest -->
-            </section>
-        </operate>
+        <include id="lang.xml"/>
+        <quest id="init_echoes" giver="draconian_teacher" exp="1000">
+            <item id="evo_shard" count="25"/>
+        </quest>
+        <npc id="draconian_teacher" extends="draconian_teacher">
+            <quest/>
+            <operate>
+                <section if="getFlag('final_boss_defeat')">
+                    <dialogue section="draconian_teacher" id="final_boss_defeat" speaker="draconian_teacher"/>
+                    <quest id="init_echoes"/>
+                </section>
+            </operate>
+        </npc>
     </init>
 </mod>
