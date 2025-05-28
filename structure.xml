@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+    <structure id="cdship" width="68" height="18" image="cdship.png" priority="-2" behind="true" remove="false" />
+</data>
