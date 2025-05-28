@@ -7,7 +7,7 @@
     <init>
         <include id="lang.xml"/>
         <quest id="init_echoes" giver="draconian_teacher" exp="1000">
-            <item id="evo_shard" count="5"/>
+            <item id="evo_shard" count="666"/>
         </quest>
         <npc id="draconian_teacher" extends="draconian_teacher">
             <quest/>
