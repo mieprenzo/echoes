@@ -9,9 +9,11 @@
         </section>
         <section id="quests">
             <text id="init_echoes">Echoes begins...</text>
+            <text id="check_dem">Something crashed?</text>
         </section>
         <section id="quest.description">
-            <text id="init_echoes"> Wants you to explore CaptAIn's star system.</text>
+            <text id="init_echoes"> Wants you to find these ingredients</text>
+            <text id="check_dem">Dem wants you to check on the crash site in captAIn's colony</text>
         </section>
     </lang>
 </data>

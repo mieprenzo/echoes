@@ -5,8 +5,18 @@
     <author>MixOnUs & MeepRenzo</author>
     <version>1.0.0</version>
     <init>
-        <include id="lang.xml"/>
-        <include id="npc/npc.xml"/>
-        <include id="structure.xml"/>
+        <quest id="check_dem">
+            <section if="getFlag('cem_spoken')">
+                <conplete quest="check_dem" />
+            </section>
+        </quest>
+
+        <procedure id="endgame" extends="endgame">
+            <quest id="check_dem" />
+        </procedure>
+
+        <include id="lang.xml" />
+        <include id="npc/npc.xml" />
+        <include id="structure.xml" />
     </init>
 </mod>
