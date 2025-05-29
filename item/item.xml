@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+<tilesheet id="escan.png" width="16" height="10"/>
+<tile id="escan.ico" sheet="escan.png" x="0"/>
+<animation id="escan.idle" x="0" count="12"/>
+<item id="escan" icon="escan.ico" animation="escan.idle"/>
+</data>
