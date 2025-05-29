@@ -7,16 +7,6 @@
     <init>
         <include id="lang.xml"/>
         <include id="npc/npc.xml"/>
-        <quest id="init_echoes" giver="dem" exp="1000">
-            <item id="wood" count="5"/>
-        </quest>
-        <npc id="dem" extends="dem">
-            <operate>
-                <section if="getFlag('final_boss_defeat')">
-                    <dialogue section="dem" id="final_boss_defeat" speaker="dem"/>
-                    <quest id="init_echoes"/>
-                </section>
-            </operate>
-        </npc>
+        <include id="structure.xml"/>
     </init>
 </mod>

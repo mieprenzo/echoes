@@ -7,7 +7,17 @@
   <animation id="dem.walk" tile="dem" x="0" count="3"/>
   <animation id="dem.attack" tile="dem" x="0" count="1"/>
 
-  <npc id="dem" tile="dem" action="talk" talk_sfx="talking4">
+    <quest id="init_echoes" giver="dem" exp="1000">
+        <item id="wood" count="5"/>
+    </quest>
+
+  <npc id="dem" tile="dem" action="talk" talk_sfx="talk1">
+            <operate>
+                <section if="getFlag('final_boss_defeat')">
+                    <dialogue section="dem" id="final_boss_defeat" speaker="dem"/>
+                    <quest id="init_echoes"/>
+                </section>
+            </operate>
     <idle class="hunt" maxWeight="50">
       <attack type="projectile" damage="20" range="7" animation="attack">
         <projectile tile="arrow" speed="3" offsetY="4" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" />

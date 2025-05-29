@@ -5,13 +5,13 @@
             <text id="dem">Dem</text>
         </section>
         <section id="dem">
-            <text id="final_boss_defeat">Congratulations, you have defeated the final boss! The world is now safe, and your journey has come to a triumphant end.</text>
+            <text id="final_boss_defeat">Congratulations, you have stopped Aliens! The world is now safe, and your journey has come to a triumphant end.</text>
         </section>
         <section id="quests">
-            <text id="init_echoes">Echoes start</text>
+            <text id="init_echoes">Echoes begins...</text>
         </section>
         <section id="quest.description">
-            <text id="init_echoes"> Wants you to find these ingredients</text>
+            <text id="init_echoes"> Wants you to explore CaptAIn's star system.</text>
         </section>
     </lang>
 </data>
