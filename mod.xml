@@ -6,8 +6,8 @@
     <version>1.0.0</version>
     <init>
         <quest id="check_dem">
-            <section if="getFlag('cem_spoken')">
-                <conplete quest="check_dem" />
+            <section if="getFlag('dem_spoken')">
+                <complete quest="check_dem" />
             </section>
         </quest>
 
