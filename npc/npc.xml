@@ -10,6 +10,11 @@
   <quest id="init_echoes" giver="dem" exp="1000">
     <item id="wood" count="5" />
   </quest>
+  <quest id="check_dem">
+    <section if="getFlag('dem_spoken')">
+      <complete quest="check_dem" />
+    </section>
+  </quest>
 
   <npc id="dem" tile="dem" action="talk" talk_sfx="talk1">
     <operate>
@@ -25,5 +30,14 @@
           hit_sfx="bandit_ranged_hit" knockback="5" />
       </attack>
     </idle>
+  </npc>
+
+  <npc id="alchemist" extends="alchemist">
+    <operate>
+      <section if="getFlag('final_boss_defeat')">
+        <dialogue section="curator_start1" id="final_boss_defeat" speaker="alchemist" />
+        <quest id="check_dem" />
+      </section>
+    </operate>
   </npc>
 </data>

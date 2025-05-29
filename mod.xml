@@ -2,19 +2,9 @@
 <mod>
     <name>Echoes</name>
     <description>[color=043d01]Echoes[/color] is a mod by MixOnUs &amp; MeepRenzo</description>
-    <author>MixOnUs & MeepRenzo</author>
+    <author>MixOnUs &amp; MeepRenzo</author>
     <version>1.0.0</version>
     <init>
-        <quest id="check_dem">
-            <section if="getFlag('dem_spoken')">
-                <complete quest="check_dem" />
-            </section>
-        </quest>
-
-        <procedure id="endgame" extends="endgame">
-            <quest id="check_dem" />
-        </procedure>
-
         <include id="lang.xml" />
         <include id="npc/npc.xml" />
         <include id="structure.xml" />

@@ -4,7 +4,7 @@
         <section id="npc">
             <text id="dem">Dem</text>
         </section>
-        <section id="dem">
+        <section id="curator_start1">
             <text id="final_boss_defeat">Congratulations, you have stopped Aliens! The world is now safe, and your journey has come to a triumphant end.</text>
         </section>
         <section id="quests">
@@ -13,7 +13,7 @@
         </section>
         <section id="quest.description">
             <text id="init_echoes"> Wants you to find these ingredients</text>
-            <text id="check_dem">Dem wants you to check on the crash site in captAIn's colony</text>
+            <text id="check_dem">wants you to check on the crash site in captAIn's colony</text>
         </section>
     </lang>
 </data>
