@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-<tilesheet id="dem.png" width="16" height="20"/>
-<tile id="dem" sheet="dem.png"/>
-<animation id="dem.idle" tile="dem" x="0" count="1"/>
-<animation id="dem.talk" tile="dem" x="0" count="1"/>
-<animation id="dem.walk" tile="dem" x="0" count="3"/>
-<animation id="dem.attack" tile="dem" x="0" count="1"/>
+  <tilesheet id="dem.png" width="16" height="20"/>
+  <tile id="dem" sheet="dem.png"/>
+  <animation id="dem.idle" tile="dem" x="0" count="1"/>
+  <animation id="dem.talk" tile="dem" x="0" count="1"/>
+  <animation id="dem.walk" tile="dem" x="0" count="3"/>
+  <animation id="dem.attack" tile="dem" x="0" count="1"/>
 
-<npc id="dem" tile="dem" action="talk" talk_sfx="talking4">
-  <idle class="hunt" maxWeight="50">
-    <attack type="projectile" damage="20" range="7" animation="attack">
-      <projectile tile="arrow" speed="3" offsetY="4" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" />
-    </attack>
-  </idle>
-</npc>
+  <npc id="dem" tile="dem" action="talk" talk_sfx="talking4">
+    <idle class="hunt" maxWeight="50">
+      <attack type="projectile" damage="20" range="7" animation="attack">
+        <projectile tile="arrow" speed="3" offsetY="4" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" />
+      </attack>
+    </idle>
+  </npc>
 </data>

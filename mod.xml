@@ -6,14 +6,14 @@
     <version>1.0.0</version>
     <init>
         <include id="lang.xml"/>
-        <quest id="init_echoes" giver="draconian_teacher" exp="1000">
-            <item id="evo_shard" count="666"/>
+        <include id="npc/npc.xml"/>
+        <quest id="init_echoes" giver="dem" exp="1000">
+            <item id="wood" count="5"/>
         </quest>
-        <npc id="draconian_teacher" extends="draconian_teacher">
-            <quest/>
+        <npc id="dem" extends="dem">
             <operate>
                 <section if="getFlag('final_boss_defeat')">
-                    <dialogue section="draconian_teacher" id="final_boss_defeat" speaker="draconian_teacher"/>
+                    <dialogue section="dem" id="final_boss_defeat" speaker="dem"/>
                     <quest id="init_echoes"/>
                 </section>
             </operate>
