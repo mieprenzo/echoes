@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-<tilesheet id="escan.png" width="16" height="10"/>
-<tile id="escan.ico" sheet="escan.png" x="0"/>
-<animation id="escan.idle" x="0" count="12"/>
-<item id="escan" icon="escan.ico" animation="escan.idle"/>
+<tilesheet id="mvmap.png" width="16" height="10"/>
+<tilesheet id="pmconstr.png" width="16" height="10"/>
+<tilesheet id="alloy.png" width="16" height="11"/>
+<tile id="mvmap.ico" sheet="mvmap.png" x="0"/>
+<tile id="pmconstr.ico" sheet="pmconstr.png" x="0"/>
+<tile id="alloy.ico" sheet="alloy.png" x="0"/>
+<animation id="mvmap.idle" x="0" count="12"/>
+<animation id="pmconstr.idle" x="0" count="3"/>
+<animation id="alloy.idle" x="0" count="5"/>
+<item id="mvmap" icon="mvmap.ico" animation="mvmap.idle"/>
+<item id="pmconstr" icon="pmconstr.ico" animation="pmconstr.idle"/>
+<item id="alloy" icon="alloy.ico" animation="pmconstr.idle"/>
+
 </data>
