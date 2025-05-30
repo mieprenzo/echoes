@@ -6,16 +6,22 @@
             <text id="snek">Snek</text>
         </section>
         <section id="snek">
-            <text id="start1">Hello there, I saw a ship flying by with crazy speeds.</text>
+            <text id="start1">Hello there, I saw a ship flying by with a lot of speed.</text>
             <text id="start2">I think it crashed on the planet, you should check on it.</text>
         </section>
+        <section id="dem">
+            <text id="init1">I am glad you are here, I need your help.</text>
+            <text id="init2">I was flying by and I crashed on this planet.</text>
+            <text id="init3">The spaceship is broken and i am not very technical. Can you check it for me?</text>
+        </section>
         <section id="quests">
-            <text id="init_echoes">Echoes begins...</text>
+            <text id="check_dem_req">Crash site checked</text>
             <text id="check_dem">Something crashed?</text>
+            <text id="init_echoes">Check the crashed ship</text>
         </section>
         <section id="quest.description">
-            <text id="init_echoes"> Wants you to find these ingredients</text>
             <text id="check_dem">you should check out the crash site in captAIn's colony.</text>
+            <text id="init_echoes"> Wants you to check out his ship</text>
         </section>
     </lang>
 </data>

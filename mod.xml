@@ -7,7 +7,7 @@
     <init>
         <include id="lang.xml" />
         <include id="npc/npc.xml" />
-        <include id="structure.xml" />
+        <include id="structure/structure.xml" />
 
         <onLoad>
             <section if="!getFlag('snek_spawned')">

@@ -2,7 +2,7 @@
 <data>
   <tilesheet id="dem.png" width="16" height="20" />
   <tile id="dem" sheet="dem.png" />
-  <animation id="dem.idle" tile="dem" x="0" count="1" />
+  <animation id="dem.idle" tile="dem" x="1" count="1" />
   <animation id="dem.talk" tile="dem" x="0" count="1" />
   <animation id="dem.walk" tile="dem" x="0" count="3" />
   <animation id="dem.attack" tile="dem" x="0" count="1" />
@@ -14,20 +14,24 @@
   <animation id="snek.walk" tile="snek" x="9" count="9" />
 
   <quest id="init_echoes" giver="dem" exp="1000">
-    <item id="wood" count="5" />
+
   </quest>
 
   <quest id="check_dem">
-    <section if="getFlag('dem_spoken')">
-      <complete quest="check_dem" />
-    </section>
+    <script name="quests.check_dem_req" id="getFlag('dem_spoken')"/>
   </quest>
 
   <npc id="dem" tile="dem" action="talk" talk_sfx="talk1">
     <operate>
-      <section if="getFlag('final_boss_defeat')">
-        <dialogue section="dem" id="final_boss_defeat" speaker="dem" />
+      <section if="getFlag('final_boss_defeat') && !player.hasQuest('init_echoes')">
+        <dialogue section="dem" id="init1" />
+        <dialogue section="dem" id="init2" />
+        <dialogue section="dem" id="init3" />
         <quest id="init_echoes" />
+        <action>
+          setFlag("dem_spoken", true)
+        </action>
+        <complete quest="check_dem" />
       </section>
     </operate>
 
@@ -41,10 +45,12 @@
 
   <npc id="snek" tile="snek" action="talk" talk_sfx="talk1">
     <operate>
-      <section if="getFlag('final_boss_defeat')">
-        <dialogue section="snek" id="start1" speaker="snek" />
-        <dialogue section="snek" id="start2" speaker="snek" />
+      <section if="getFlag('final_boss_defeat')&& !player.hasQuest('check_dem')">
+        <dialogue section="snek" id="start1"/>
+        <dialogue section="snek" id="start2"/>
         <quest id="check_dem" />
+        <structure id="cdship" x="1" y="-0.6" area="colony.mainland"/>
+        <object id="dem" area="colony.mainland"/>
       </section>
     </operate>
     <idle class="wander" toX="115" />
