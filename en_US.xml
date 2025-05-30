@@ -3,9 +3,11 @@
     <lang id="en_US" name="English" version="2.1.2">
         <section id="npc">
             <text id="dem">Dem</text>
+            <text id="snek">Snek</text>
         </section>
-        <section id="curator_start1">
-            <text id="final_boss_defeat">Congratulations, you have stopped Aliens! The world is now safe, and your journey has come to a triumphant end.</text>
+        <section id="snek">
+            <text id="start1">Hello there, I saw a ship flying by with crazy speeds.</text>
+            <text id="start2">I think it crashed on the planet, you should check on it.</text>
         </section>
         <section id="quests">
             <text id="init_echoes">Echoes begins...</text>
@@ -13,7 +15,7 @@
         </section>
         <section id="quest.description">
             <text id="init_echoes"> Wants you to find these ingredients</text>
-            <text id="check_dem">wants you to check on the crash site in captAIn's colony</text>
+            <text id="check_dem">you should check out the crash site in captAIn's colony.</text>
         </section>
     </lang>
 </data>

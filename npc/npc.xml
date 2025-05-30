@@ -7,9 +7,16 @@
   <animation id="dem.walk" tile="dem" x="0" count="3" />
   <animation id="dem.attack" tile="dem" x="0" count="1" />
 
+  <tilesheet id="snek.png" width="16" height="16" />
+  <tile id="snek" sheet="snek.png" />
+  <animation id="snek.idle" tile="snek" x="8" count="1" />
+  <animation id="snek.talk" tile="snek" x="0" count="9" />
+  <animation id="snek.walk" tile="snek" x="9" count="9" />
+
   <quest id="init_echoes" giver="dem" exp="1000">
     <item id="wood" count="5" />
   </quest>
+
   <quest id="check_dem">
     <section if="getFlag('dem_spoken')">
       <complete quest="check_dem" />
@@ -32,12 +39,14 @@
     </idle>
   </npc>
 
-  <npc id="alchemist" extends="alchemist">
+  <npc id="snek" tile="snek" action="talk" talk_sfx="talk1">
     <operate>
       <section if="getFlag('final_boss_defeat')">
-        <dialogue section="curator_start1" id="final_boss_defeat" speaker="alchemist" />
+        <dialogue section="snek" id="start1" speaker="snek" />
+        <dialogue section="snek" id="start2" speaker="snek" />
         <quest id="check_dem" />
       </section>
     </operate>
+    <idle class="wander" toX="115" />
   </npc>
 </data>

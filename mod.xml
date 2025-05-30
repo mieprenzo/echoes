@@ -8,5 +8,14 @@
         <include id="lang.xml" />
         <include id="npc/npc.xml" />
         <include id="structure.xml" />
+
+        <onLoad>
+            <section if="!getFlag('snek_spawned')">
+                <object id="snek" x="106" y="22" area="colony.orbit.station" />
+                <action>
+                    setFlag("snek_spawned", true)
+                </action>
+            </section>
+        </onLoad>
     </init>
 </mod>
