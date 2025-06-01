@@ -5,10 +5,13 @@
     <author>MixOnUs &amp; MeepRenzo</author>
     <version>1.0.0</version>
     <init>
+        <include id="haxe.xml" />
+        <include id="windows.xml" />
         <include id="lang.xml" />
-        <include id="npc/npc.xml" />
-        <include id="structure/structure.xml" />
-        <include id="item/item.xml" />
+
+        <include id="npc/npc.xml"/>
+        <include id="structure/structure.xml"/>
+        <include id="item/item.xml"/>
 
         <onLoad>
             <section if="!getFlag('snek_spawned')">

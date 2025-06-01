@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-    <structure id="cdship" width="68" height="18" image="cdship.png" priority="-2" behind="true" remove="false" />
+    <structure id="cdship" width="68" height="18" image="cdship.png" priority="-2" behind="true" remove="false">
+        <tooltip id="operate"/>
+        <operate>
+            <window id="inspect_ship"/>
+        </operate>
+    </structure>
+
+    <tilesheet id="inspect_ship.png" width="32" height="32" />
+    <tile id="inspect_ship" sheet="inspect_ship.png" />
+    <object id="inspect_ship" width="32" height="32" tile="inspect_ship" layer="top"/>
 </data>

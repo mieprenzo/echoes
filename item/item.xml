@@ -1,21 +1,26 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <data>
-<tilesheet id="mvmap.png" width="16" height="10"/>
-<tilesheet id="pmconstr.png" width="16" height="10"/>
-<tilesheet id="alloy.png" width="16" height="11"/>
-<tilesheet id="nanoblade.png" width="8" height="8"/>
-<tile id="mvmap.ico" sheet="mvmap.png" x="0"/>
-<tile id="pmconstr.ico" sheet="pmconstr.png" x="0"/>
-<tile id="alloy.ico" sheet="alloy.png" x="0"/>
-<tile id="nanoblade" sheet="nanoblade.png" x="0" offsetX="-3" offsetY="4"/>
-<tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="3" offsetY="1"/>
-<animation id="mvmap.idle" x="0" count="12"/>
-<animation id="pmconstr.idle" x="0" count="3"/>
-<animation id="alloy.idle" x="0" count="5"/>
-<item id="mvmap" icon="mvmap.ico" animation="mvmap.idle"/>
-<item id="pmconstr" icon="pmconstr.ico" animation="pmconstr.idle"/>
-<item id="alloy" icon="alloy.ico" animation="pmconstr.idle"/>
-<item id="nanoblade" type="equipment" slot="weapon" cost="55" durability="200" weight="8" stamina="2" action="equip" knockback="5" repair="iron_bar" movement_walk="walk_rswing" sounds="sword" icon="nanoblade.ico">
-<attack type="melee" damage="20" ignoreArmor="true" hitEffect="freeze" />
-</item>
+    <tilesheet id="mvmap.png" width="16" height="10" />
+    <tilesheet id="pmconstr.png" width="16" height="10" />
+    <tilesheet id="alloy.png" width="16" height="11" />
+    <tilesheet id="nanoblade.png" width="8" height="8" />
+    
+    <tile id="mvmap.ico" sheet="mvmap.png" x="0" />
+    <tile id="pmconstr.ico" sheet="pmconstr.png" x="0" />
+    <tile id="alloy.ico" sheet="alloy.png" x="0" />
+    <tile id="nanoblade" sheet="nanoblade.png" x="0" offsetX="-3" offsetY="4" />
+    <tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="3" offsetY="1" />
+
+    <animation id="mvmap.idle" x="0" count="12" />
+    <animation id="pmconstr.idle" x="0" count="3" />
+    <animation id="alloy.idle" x="0" count="5" />
+
+    <item id="mvmap" icon="mvmap.ico" animation="mvmap.idle" />
+    <item id="pmconstr" icon="pmconstr.ico" animation="pmconstr.idle" />
+    <item id="alloy" icon="alloy.ico" animation="pmconstr.idle" />
+    <item id="nanoblade" type="equipment" slot="weapon" cost="55" durability="200" weight="8"
+        stamina="2" action="equip" knockback="5" repair="iron_bar" movement_walk="walk_rswing"
+        sounds="sword" icon="nanoblade.ico">
+        <attack type="melee" damage="20" ignoreArmor="true" hitEffect="freeze" />
+    </item>
 </data>
