@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
     <lang id="en_US" name="English" version="2.1.2">
+        <section id="item.names">
+            <text id="pmconstr">Portable Matter Constructor</text>
+            <text id="mvmap">Multi-Dimensional Map</text>
+            <text id="alloy">Unstable Exotic Alloy</text>
+            <text id="nanoblade">NanoBlade</text>
+        </section>
         <section id="npc">
             <text id="dem">Dem</text>
             <text id="snek">Snek</text>
