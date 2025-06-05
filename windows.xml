@@ -1,4 +1,5 @@
 <data>
     <window id="inspect_ship" width="256" height="144" closeable="true">
+        <text x="256/2" text="Inspect Ship" align="center"/>
     </window>
 </data>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+    <action>
+        function fpsTrigger(fps) {
+            getLocalPlayer().renderer.sprite.getChildAt(0).deltaFrame = fps / 60;
+        }
+
+        function evalWeapon(xml) {
+            var itemxml = "&lt;item";
+            
+            // attributes
+            //trace(classFields(xml));
+            for (k in xml.xml.attributeMap.keys()) {
+                var v = xml.get(k);
+                itemxml += ' ' + k + '="' + v + '"';
+            }
+            itemxml += "&gt;";
+            
+            // children
+            for (c in xml.xml.children) {
+                itemxml += c;
+            }
+
+            // add the onEquip fps change
+            itemxml += '&lt;onEquip&gt;&lt;action&gt;fpsTrigger(this.info.xml.get("fps"));&lt;/action&gt;&lt;/onEquip&gt;';
+
+            // close it all off
+            itemxml += "&lt;/item&gt;";
+            evalXml(itemxml);
+            return itemxml;
+        }
+    </action>
+
+    <data type="weapon">
+        evalWeapon(this.xml);
+    </data>
+</data>
