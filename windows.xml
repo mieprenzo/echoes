@@ -1,4 +1,12 @@
 <data>
     <window id="inspect_ship" width="256" height="144" closeable="true">
+        <rect x="63" y="8" width="128" height="1"/>
+        <action>
+            var i = 0;
+            while (i &lt; 5) {
+                evalXml('&lt;rect x="' + (63 + i) + '" y="' + (8 + i) + '" width="1" height="1" color="ffffff"/&gt;');
+                i++;
+            }
+        </action>
     </window>
 </data>
