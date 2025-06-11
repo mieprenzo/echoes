@@ -5,6 +5,9 @@
     <author>MixOnUs &amp; MeepRenzo</author>
     <version>1.0.0</version>
     <init>
+
+        <include id="fastanim.xml"/>
+        <include id="slowanim.xml"/>
         <include id="haxe.xml" />
         <include id="windows.xml" />
         <include id="lang.xml" />

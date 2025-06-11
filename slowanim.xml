@@ -1,0 +1,25 @@
+<data>
+    <!--QOL tag for making animations normally but slower by a scale, good for after you change fps-->
+    
+    <action>
+        function eval_slowanim(xml) {
+                var xoffset = xml.get("offsetX"); var yoffset = xml.get("offsetY");
+                var animstr = '&lt;animation id="' +xml.get("id")+ '"&gt;';
+                
+                for (framex in 0 ... xml.get("count")) {
+                    str += '&lt;frame x="' +(xml.get("x") + framex)+ '" length="' +xml.get("mult")+ '" ';
+                    if (xoffset != null) {str += 'offsetX="' +xoffset+ '"';}
+                    if (yoffset != null) {str += 'offsetY="' +yoffset+'"';}
+                    str += "/&gt;";
+                }
+                str += '&lt;/animation&gt;';
+                evalXml(str);
+                return str;
+            }
+    </action>
+
+    <data type="slowAnim">
+        eval_slowanim(this.xml);
+    </data>
+
+</data>
