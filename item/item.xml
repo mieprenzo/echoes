@@ -35,5 +35,13 @@
     <item id="mvmap" icon="mvmap.ico" animation="mvmap.idle" />
     <item id="pmconstr" icon="pmconstr.ico" animation="pmconstr.idle" />
     <item id="alloy" icon="alloy.ico" animation="pmconstr.idle" />
-    <item id="nanoblade" type="equipment" slot="weapon" cost="55" durability="200" weight="8" stamina="2" action="equip" attack="30" knockback="5" delay="10" repair="iron_bar" movement_walk="walk_rswing" sounds="sword" icon="nanoblade.ico"/>
+    <item id="nanoblade" fps="180" type="equipment" slot="weapon" cost="55" durability="200" ignoreArmor="true" weight="8" stamina="2" action="equip" attack="0" knockback="5" delay="10" repair="iron_bar" movement_walk="walk_rswing" sounds="sword" icon="nanoblade.ico">
+        <projectile tile="fireball_small" speed="8" range="1" offsetY="5" knockback="5">
+		</projectile>
+        <onEquip>
+            <action>
+                fpsTrigger(this.info.xml.get("fps"));
+            </action>
+        </onEquip>
+    </item>
 </data>

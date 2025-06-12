@@ -21,6 +21,8 @@
                 itemxml += c;
             }
 
+            // add the attack action and trace() the damage
+
             // add the onEquip fps change
             itemxml += '&lt;onEquip&gt;&lt;action&gt;fpsTrigger(this.info.xml.get("fps"));&lt;/action&gt;&lt;/onEquip&gt;';
 
