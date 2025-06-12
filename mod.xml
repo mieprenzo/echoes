@@ -15,6 +15,7 @@
         <include id="npc/npc.xml"/>
         <include id="structure/structure.xml"/>
         <include id="item/item.xml"/>
+        <include id="enemy/enemy.xml"/>
 
         <onLoad>
             <section if="!getFlag('snek_spawned')">

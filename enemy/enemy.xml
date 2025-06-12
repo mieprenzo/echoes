@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+<tilesheet id="humanthrall.png" width="17" height="22">
+    <image frame="0" x="16" width="17" height="22"/>
+    <image frame="1" x="49" width="17" height="22"/>
+    <image frame="2" x="82" width="17" height="22"/>
+    <image frame="3" x="115" width="17" height="22"/>
+    <image frame="4" x="148" width="17" height="22"/>
+    <image frame="5" x="181" width="17" height="22"/>
+    <image frame="6" x="214" width="17" height="22"/>
+    <image frame="7" x="247" width="17" height="22"/>
+    <image frame="8" x="280" width="17" height="22"/>
+    <image frame="9" x="313" width="17" height="22"/>
+    <image frame="10" x="346" width="17" height="22"/>
+    <image frame="11" x="379" width="17" height="22"/>
+    <image frame="12" x="412" width="17" height="22"/>
+    <image frame="13" x="445" width="17" height="22"/>
+    <image frame="14" x="478" width="17" height="22"/>
+    <image frame="15" x="511" width="17" height="22"/>
+    <image frame="16" x="544" width="17" height="22"/>
+    <image frame="17" x="577" width="17" height="22"/>
+    <image frame="17" x="598" width="29" height="22" offsetX="-12"/>
+    <image frame="18" x="630" width="30" height="22" offsetX="-13"/>
+    <image frame="19" x="662" width="31" height="22" offsetX="-14"/>
+    <image frame="20" x="693" width="33" height="22" offsetX="-16"/>
+    <image frame="21" x="709" width="17" height="22"/>
+    <image frame="22" x="742" width="17" height="22"/>
+  </tilesheet>
+  <tile id="human_thrall" sheet="humanthrall.png" x="0"/>
+  <animation id="human_thrall.idle" x="10" count="4"/>
+  <animation id="human_thrall.walk" x="0" count="11"/>
+  <animation id="human_thrall.fire" x="14" count="9"/>
+  <enemy id="human_thrall" tile="human_thrall" health="50" defense="9" speed="3" type="golem" death_sfx="cyborg_death">
+    <attack type="projectile" damage="20" range="12" animation="fire">
+      <projectile tile="exog_shot.projectile" animation="bullet" speed="5" fire_sfx="plasma_gun" color="730021" colorScale="3">
+        <removed>
+			<projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="player.getFacing()" dy="-0.5" color="730021" colorScale="3"  underwater="true">
+        <light tile="light.small" color="730021" />
+			</projectile>
+      <projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="player.getFacing()" dy="0.5" color="730021" colorScale="3"  underwater="true">
+				<light tile="light.small" color="730021" />
+			</projectile>
+        </removed>
+      </projectile>
+    </attack>
+  </enemy>
