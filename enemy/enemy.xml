@@ -31,10 +31,10 @@
   <animation id="human_thrall.walk" x="4" count="11"/>
   <animation id="human_thrall.fire" x="14" count="9"/>
   <animation id="human_thrall.hit" x="0" count="4"/>
-  <enemy id="human_thrall" tile="human_thrall" type="surface" health="50" range="20" speed="3" defense="9" death_sfx="cyborg_death">
+  <enemy id="human_thrall" tile="human_thrall" type="surface" vertical="true" health="50" range="20" speed="2.5" defense="9" death_sfx="cyborg_death">
     <flee id="player"/>
     <attack type="projectile" damage="20" range="12" animation="fire">
-      <projectile tile="exog_shot.projectile" animation="exog_shot" speed="5" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
+     <projectile tile="exog_shot.projectile" animation="exog_shot" offsetY="-4" speed="5" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
         <removed>
 			<projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="player.getFacing()" dy="-0.5" color="730021" colorScale="3"  underwater="true">
         <light tile="light.small" color="730021" />
@@ -43,6 +43,15 @@
 				<light tile="light.small" color="730021" />
 			</projectile>
         </removed>
-      </projectile>
+     </projectile>
     </attack>
+    <onDeath>
+    <object id="human_thrall2" x="this.tile_x-1" y="this.tile_y"/>
+    <object id="human_thrall2" x="this.tile_x" y="this.tile_y"/>
+    <object id="human_thrall2" x="this.tile_x+1" y="this.tile_y"/>
+    </onDeath>
+  </enemy> 
+  <enemy id="human_thrall2" extends="human_thrall">
+   <onDeath><stop/></onDeath>
   </enemy>
+</data>

@@ -24,7 +24,7 @@
     <tile id="pmconstr.ico" sheet="pmconstr.png" x="0" />
     <tile id="alloy.ico" sheet="alloy.png" x="0" />
     <tile id="nanoblade" sheet="nanoblade.png"/>
-    <tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="3" offsetY="1" />
+    <tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="5" offsetY="-7" />
 
     <animation id="mvmap.idle" x="0" count="12" />
     <animation id="pmconstr.idle" x="0" count="3" />
