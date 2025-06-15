@@ -31,7 +31,7 @@
   <animation id="human_thrall.walk" x="4" count="11"/>
   <animation id="human_thrall.fire" x="14" count="9"/>
   <animation id="human_thrall.hit" x="0" count="4"/>
-  <enemy id="human_thrall" tile="human_thrall" type="surface" vertical="true" health="50" range="20" speed="2.5" defense="9" death_sfx="cyborg_death">
+  <enemy id="human_thrall" tile="human_thrall" type="surface" vertical="true" passEnemies="true" health="50" range="20" speed="2.5" defense="9" death_sfx="cyborg_death">
     <flee id="player"/>
     <attack type="projectile" damage="20" range="12" animation="fire">
      <projectile tile="exog_shot.projectile" animation="exog_shot" offsetY="-4" speed="5" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
