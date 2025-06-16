@@ -54,4 +54,22 @@
   <enemy id="human_thrall2" extends="human_thrall">
    <onDeath><stop/></onDeath>
   </enemy>
+
+  <enemy id="paramedic" tile="boar" passEnemies="true" type="surface" health="50" range="20" speed="2" defense="9" death_sfx="cyborg_death">
+    <flee id="human_thrall"/>
+    <attack type="projectile" damage="1" tile="exog_shot.projectile" animation="exog_shot" speed="1" fire_sfx="plasma_gun" color="730021" colorScale="3">
+      <projectile tile="exog_shot.projectile" animation="exog_shot" damage="1" range="8" speed="1" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" color="730021" colorScale="3"  underwater="true">
+        <onHit>
+          <action>
+            var maxHealth = object.info.xml.get("health");
+            if(Std.parseInt(object.health) + 10 > Std.parseInt(maxHealth)) {
+              object.health = maxHealth;
+            } else {
+              object.health = Std.parseInt(object.health) + 10;
+            }
+          </action>
+        </onHit>
+      </projectile>
+    </attack>
+  </enemy>
 </data>
