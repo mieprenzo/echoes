@@ -24,7 +24,7 @@
     <tile id="pmconstr.ico" sheet="pmconstr.png" x="0" />
     <tile id="alloy.ico" sheet="alloy.png" x="0" />
     <tile id="nanoblade" sheet="nanoblade.png"/>
-    <tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="3" offsetY="1" />
+    <tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="5" offsetY="-7" />
 
     <animation id="mvmap.idle" x="0" count="12" />
     <animation id="pmconstr.idle" x="0" count="3" />
@@ -35,7 +35,7 @@
     <item id="mvmap" icon="mvmap.ico" animation="mvmap.idle" />
     <item id="pmconstr" icon="pmconstr.ico" animation="pmconstr.idle" />
     <item id="alloy" icon="alloy.ico" animation="pmconstr.idle" />
-    <item id="nanoblade" fps="60" type="equipment" slot="weapon" cost="777" durability="2000" weight="8" stamina="2" action="equip" range="1" attack="20" knockback="5" repair="alloy" movement_walk="walk_rswing" sounds="sword" icon="nanoblade.ico">
+    <item id="nanoblade" fps="60" type="equipment" slot="weapon" cost="777" durability="2000" weight="8" stamina="2" action="equip" range="1" attack="20" knockback="5" repair="alloy" movement_walk="walk_rswing" sounds="bandit_knives_hit" icon="nanoblade.ico">
         <projectile tile="fireball_small" speed="2" offsetY="5" knockback="5" ignoreArmor="true" color="4c1199" colorScale="3" hit_sfx="sword"/>
         <onEquip>
             <action>
