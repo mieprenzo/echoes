@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
 <volume name="thrall_death" value="100"/>
+<volume name="infcarrier_attack" value="1000"/>
 <sound id="thrall_death"/>
+<sound id="infcarrier_attack"/>
 </data>
