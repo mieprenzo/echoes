@@ -94,6 +94,8 @@
 	 <loot id="alloy" p="20"/>
   </enemy>
 
+   Make function that will improve minAngle maxAngle variant. So like each shot projectile has different angle.
+   
   <enemy id="inf_carrier" tile="human_thrall" type="surface" vertical="true" passEnemies="true" friendlyFire="false" health="300" range="12" speed="0" defense="9" death_sfx="explosion">
     <attack type="projectile" animation="fire" range="12" damage="15" fireAll="true" minAngle="-10"  maxAngle="10" cooldown="150">
      <pre><sound id="infcarrier_attack"/></pre>
