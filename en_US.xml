@@ -5,15 +5,15 @@
             <text id="pmconstr">Portable Matter Constructor</text>
             <text id="mvmap">Multiverse Map</text>
             <text id="alloy">Dimensional Alloy</text>
-            <text id="nanoblade">NanoBlade</text>
+            <text id="nanoblade">NanoBlade</text>r
         </section>
         <section id="npc">
             <text id="dem">Dem</text>
             <text id="snek">Snek</text>
         </section>
         <section id="snek">
-            <text id="start1">Hello there, I saw a ship flying by with a lot of speed.</text>
-            <text id="start2">I think it crashed on the planet, you should check on it.</text>
+            <text id="start1">Hello there, I saw a ship flying by, with a lot of speed.</text>
+            <text id="start2">I think it crashed on the planet, you should probably check it.</text>
         </section>
         <section id="dem">
             <text id="init1">I am glad you are here, I need your help.</text>

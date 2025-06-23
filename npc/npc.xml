@@ -14,19 +14,24 @@
   <animation id="snek.walk" tile="snek" x="9" count="9" />
 
   <quest id="init_echoes" giver="dem" exp="1000">
-
   </quest>
 
   <quest id="check_dem">
     <script name="quests.check_dem_req" id="getFlag('dem_spoken')"/>
   </quest>
 
-  <npc id="dem" tile="dem" action="talk" talk_sfx="talk1">
+  <npc id="dem" tile="dem" action="talk">
     <operate>
       <section if="getFlag('final_boss_defeat') && !player.hasQuest('init_echoes')">
-        <dialogue section="dem" id="init1" />
-        <dialogue section="dem" id="init2" />
-        <dialogue section="dem" id="init3" />
+        <dialogue section="dem" id="init1" >
+        <pre><sound id="voiceacting"/></pre>
+        </dialogue>
+        <dialogue section="dem" id="init2" >
+        <pre><sound id="voiceacting"/></pre>
+        </dialogue>
+        <dialogue section="dem" id="init3" >
+        <pre><sound id="voiceacting"/></pre>
+        </dialogue>
         <quest id="init_echoes" />
         <action>
           setFlag("dem_spoken", true)
@@ -43,10 +48,12 @@
     </idle>
   </npc>
 
-  <npc id="snek" tile="snek" action="talk" talk_sfx="talk1">
+  <npc id="snek" tile="snek" action="talk">
     <operate>
       <section if="getFlag('final_boss_defeat')&& !player.hasQuest('check_dem')">
+        <sound id="snek_voice"/>
         <dialogue section="snek" id="start1"/>
+        <sound id="snek_voice"/>
         <dialogue section="snek" id="start2"/>
         <quest id="check_dem" />
         <structure id="cdship" x="1" y="-0.6" area="colony.mainland"/>

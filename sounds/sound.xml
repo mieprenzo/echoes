@@ -2,6 +2,8 @@
 <data>
 <volume name="thrall_death" value="100"/>
 <volume name="infcarrier_attack" value="1000"/>
+<volume name="snek_voice" value="600"/>
 <sound id="thrall_death"/>
 <sound id="infcarrier_attack"/>
+<sound id="snek_voice"/>
 </data>

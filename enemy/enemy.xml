@@ -96,7 +96,7 @@
 
    Make function that will improve minAngle maxAngle variant. So like each shot projectile has different angle.
    
-  <enemy id="inf_carrier" tile="human_thrall" type="surface" vertical="true" passEnemies="true" friendlyFire="false" health="300" range="12" speed="0" defense="9" death_sfx="explosion">
+  <enemy id="inf_carrier" tile="human_thrall" type="surface" vertical="true" passEnemies="true" friendlyFire="false" health="300" range="12" speed="1" defense="9" death_sfx="explosion">
     <attack type="projectile" animation="fire" range="12" damage="15" fireAll="true" minAngle="-10"  maxAngle="10" cooldown="150">
      <pre><sound id="infcarrier_attack"/></pre>
      <projectile tile="exog_shot.projectile" animation="exog_shot" glow="true" speed="3" offsetY="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
@@ -106,7 +106,7 @@
      <projectile tile="exog_shot.projectile" animation="exog_shot" glow="true" speed="3" offsetY="6" delay="8" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
     </attack>
 
-    <cooldown id="spawn" seconds="400">
+    <cooldown id="spawn" seconds="4">
         <set id="recruitment" value="randInt(1,4)"/>
 				<sound id="dragon_atk" /><play object="this" animation="spawn_begin" />
 				<play object="this" animation="spawn_pre" /><set id="dx" value="this.getDX()" />
