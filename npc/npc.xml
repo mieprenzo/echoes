@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data>
+  <tilesheet id="rdem.png" width="21" height="23">
+  <image frame="0" x="16" width="21" height="23"/>
+    <image frame="1" x="53" width="21" height="23"/>
+    <image frame="2" x="90" width="21" height="23"/>
+    <image frame="3" x="127" width="21" height="23"/>
+    <image frame="4" x="164" width="21" height="23"/>
+    <image frame="5" x="201" width="21" height="23"/>
+    <image frame="6" x="238" width="21" height="23"/>
+    <image frame="7" x="275" width="21" height="23"/>
+    <image frame="8" x="312" width="21" height="23"/>
+    <image frame="9" x="349" width="21" height="23"/>
+    <image frame="10" x="386" width="21" height="23"/>
+    <image frame="11" x="423" width="21" height="23"/>
+    <image frame="12" x="448" width="33" height="23" offsetX="-16"/>
+    <image frame="13" x="484" width="34" height="23" offsetX="-17"/>
+    <image frame="14" x="520" width="35" height="23" offsetX="-18"/>
+    <image frame="15" x="555" width="37" height="23" offsetX="-20"/>
+    <image frame="16" x="608" width="21" height="23"/>
+    <image frame="17" x="645" width="21" height="23"/>
+    <image frame="18" x="682" width="21" height="23"/>
+    <image frame="19" x="719" width="21" height="23"/>
+    <image frame="20" x="756" width="21" height="23"/>
+    <image frame="21" x="793" width="21" height="23"/>
+  </tilesheet>
   <tilesheet id="dem.png" width="16" height="20" />
-  <tile id="dem" sheet="dem.png" />
-  <animation id="dem.idle" tile="dem" x="1" count="1" />
-  <animation id="dem.talk" tile="dem" x="0" count="1" />
-  <animation id="dem.walk" tile="dem" x="0" count="3" />
-  <animation id="dem.attack" tile="dem" x="0" count="1" />
+  <tile id="dem" sheet="rdem.png" />
+  <animation id="dem.walk" tile="dem" x="0" count="12" />
+  <animation id="dem.attack" tile="dem" x="12" count="5" />
+  <animation id="dem.talk" tile="dem" x="17" count="5" />
+  <animation id="dem.idle" tile="dem" x="17" count="5" />
 
   <tilesheet id="snek.png" width="16" height="16" />
   <tile id="snek" sheet="snek.png" />
@@ -23,15 +47,12 @@
   <npc id="dem" tile="dem" action="talk">
     <operate>
       <section if="getFlag('final_boss_defeat') && !player.hasQuest('init_echoes')">
-        <dialogue section="dem" id="init1" >
-        <pre><sound id="voiceacting"/></pre>
-        </dialogue>
-        <dialogue section="dem" id="init2" >
-        <pre><sound id="voiceacting"/></pre>
-        </dialogue>
-        <dialogue section="dem" id="init3" >
-        <pre><sound id="voiceacting"/></pre>
-        </dialogue>
+        <sound id="dem_voice"/>
+        <dialogue section="dem" id="init1"/>
+        <sound id="dem_voice"/>
+        <dialogue section="dem" id="init2"/>
+        <sound id="dem_voice"/>
+        <dialogue section="dem" id="init3"/>
         <quest id="init_echoes" />
         <action>
           setFlag("dem_spoken", true)
@@ -41,9 +62,8 @@
     </operate>
 
     <idle class="hunt" maxWeight="50">
-      <attack type="projectile" damage="20" range="7" animation="attack">
-        <projectile tile="arrow" speed="3" offsetY="4" fire_sfx="plasma_gun"
-          hit_sfx="bandit_ranged_hit" knockback="5" />
+      <attack type="projectile" damage="20" range="10" animation="attack">
+        <projectile tile="infg_shot.projectile" animaiton="infg_shot" speed="3" offsetY="-4" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" color="cf843e" colorScale="3" underwater="true"/>
       </attack>
     </idle>
   </npc>

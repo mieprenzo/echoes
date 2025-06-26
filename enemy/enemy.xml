@@ -73,25 +73,21 @@
 
   <enemy id="human_thrall" tile="human_thrall" width="16" type="surface" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
     <attack type="projectile" damage="20" range="12" animation="fire">
-     <projectile tile="exog_shot.projectile" animation="exog_shot" offsetY="-4" speed="5" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
+      <projectile tile="infg_shot.projectile" animation="infg_shot" offsetY="-4" speed="5" delay="3" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
         <removed>
-			<projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="this.getFacing()" dy="-0.5" color="730021" colorScale="3"  underwater="true">
+			<projectile tile="infg_shot.projectile" animation="infg_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="area.getObject('human_thrall')" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="-area.getObject('human_thrall').getFacing()" dy="-0.5" color="730021" colorScale="3"  underwater="true">
         <light tile="light.small" color="730021" />
 			</projectile>
-      <projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="this.getFacing()" dy="0.5" color="730021" colorScale="3"  underwater="true">
+      <projectile tile="infg_shot.projectile" animation="infg_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="area.getObject('human_thrall')" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="-area.getObject('human_thrall').getFacing()" dy="0.5" color="730021" colorScale="3"  underwater="true">
 				<light tile="light.small" color="730021" />
 			</projectile>
         </removed>
-     </projectile>
+      </projectile>
     </attack>
-     <attack type="melee" damage="20" range="1" ignoreArmor="true" sfx="bandit_knives_hit" animation="melee"/>
-  </enemy>
-
-  <enemy id="human_thrall2" extends="human_thrall" speed="0">
-   <onDeath><stop/></onDeath>
-   <lootSet><loot id="ship_parts" count="1"/></lootSet>
-   <loot p="80"/>
-	 <loot id="alloy" p="20"/>
+    <attack type="melee" damage="20" range="1" ignoreArmor="true" sfx="bandit_knives_hit" animation="melee"/>
+      <lootSet><loot id="ship_parts" count="1"/></lootSet>
+      <loot p="80"/>
+	    <loot id="alloy" p="20"/>
   </enemy>
 
    Make function that will improve minAngle maxAngle variant. So like each shot projectile has different angle.
@@ -99,11 +95,11 @@
   <enemy id="inf_carrier" tile="human_thrall" type="surface" vertical="true" passEnemies="true" friendlyFire="false" health="300" range="12" speed="1" defense="9" death_sfx="explosion">
     <attack type="projectile" animation="fire" range="12" damage="15" fireAll="true" minAngle="-10"  maxAngle="10" cooldown="150">
      <pre><sound id="infcarrier_attack"/></pre>
-     <projectile tile="exog_shot.projectile" animation="exog_shot" glow="true" speed="3" offsetY="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
-     <projectile tile="exog_shot.projectile" animation="exog_shot" glow="true" speed="3" offsetY="12" delay="2" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
-     <projectile tile="exog_shot.projectile" animation="exog_shot" glow="true" speed="3" offsetY="9" delay="4" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
-     <projectile tile="exog_shot.projectile" animation="exog_shot" glow="true" speed="3" offsetY="3" delay="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
-     <projectile tile="exog_shot.projectile" animation="exog_shot" glow="true" speed="3" offsetY="6" delay="8" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="12" delay="2" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="9" delay="4" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="3" delay="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="6" delay="8" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
     </attack>
 
     <cooldown id="spawn" seconds="4">
@@ -188,7 +184,7 @@
     <target id="human_thrall"/>
     <target id="human_thrall2"/>
     <attack type="projectile" damage="1" range="12" animation="fire">
-      <projectile tile="exog_shot.projectile" animation="exog_shot" damage="1" ignoreArmor="true" range="8" speed="4" fire_sfx="bandit_ranged_attack" color="048f4c" colorScale="3"  underwater="true">
+      <projectile tile="infg_shot.projectile" animation="infg_shot" damage="1" ignoreArmor="true" range="8" speed="4" fire_sfx="bandit_ranged_attack" color="048f4c" colorScale="3"  underwater="true">
         <onHit>
           <action>
             object.health = Math.min(object.info.xml.get("health"), Std.parseInt(object.health) + 10);
