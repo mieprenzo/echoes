@@ -13,10 +13,10 @@
     <image frame="9" x="349" width="21" height="23"/>
     <image frame="10" x="386" width="21" height="23"/>
     <image frame="11" x="423" width="21" height="23"/>
-    <image frame="12" x="448" width="33" height="23" offsetX="-16"/>
-    <image frame="13" x="484" width="34" height="23" offsetX="-17"/>
-    <image frame="14" x="520" width="35" height="23" offsetX="-18"/>
-    <image frame="15" x="555" width="37" height="23" offsetX="-20"/>
+    <image frame="12" x="448" width="33" height="23" offsetX="-12"/>
+    <image frame="13" x="484" width="34" height="23" offsetX="-13"/>
+    <image frame="14" x="520" width="35" height="23" offsetX="-14"/>
+    <image frame="15" x="555" width="37" height="23" offsetX="-16"/>
     <image frame="16" x="608" width="21" height="23"/>
     <image frame="17" x="645" width="21" height="23"/>
     <image frame="18" x="682" width="21" height="23"/>
@@ -44,7 +44,7 @@
     <script name="quests.check_dem_req" id="getFlag('dem_spoken')"/>
   </quest>
 
-  <npc id="dem" tile="dem" action="talk">
+  <npc id="dem" tile="dem" action="talk" night="true">
     <operate>
       <section if="getFlag('final_boss_defeat') && !player.hasQuest('init_echoes')">
         <sound id="dem_voice"/>
@@ -63,7 +63,7 @@
 
     <idle class="hunt" maxWeight="50">
       <attack type="projectile" damage="20" range="10" animation="attack">
-        <projectile tile="infg_shot.projectile" animaiton="infg_shot" speed="3" offsetY="-4" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" color="cf843e" colorScale="3" underwater="true"/>
+        <projectile tile="infg_shot.projectile" animaiton="infg_shot" speed="3" offsetY="-2" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" color="cf843e" colorScale="3" underwater="true"/>
       </attack>
     </idle>
   </npc>
