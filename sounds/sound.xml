@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-<volume name="thrall_death" value="100"/>
+<volume name="thrall_death" value="200"/>
 <volume name="infcarrier_attack" value="1000"/>
 <volume name="snek_voice" value="600"/>
 <volume name="dem_voice" value="400"/>
