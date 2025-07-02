@@ -63,7 +63,7 @@
 
     <idle class="hunt" maxWeight="50">
       <attack type="projectile" damage="20" range="10" animation="attack">
-        <projectile tile="infg_shot.projectile" animaiton="infg_shot" speed="3" offsetY="-2" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" color="cf843e" colorScale="3" underwater="true"/>
+        <projectile tile="infg_shot.projectile" animaiton="infg_shot" speed="3" offsetY="-2" fire_sfx="plasma_gun" hit_sfx="bandit_ranged_hit" knockback="5" color="cf843e" colorScale="2.5" underwater="true"/>
       </attack>
     </idle>
   </npc>

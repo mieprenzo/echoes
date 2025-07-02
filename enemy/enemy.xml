@@ -71,7 +71,7 @@
   <animation id="paramedic.walk" x="6" count="10"/>
   <animation id="paramedic.fire" x="16" count="6"/>
 
-  <enemy id="human_thrall" tile="human_thrall" width="16" type="surface" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
+  <enemy id="human_thrall" tile="human_thrall" width="16" type="surface" icon="escort_fighter.ico" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
     <attack type="breath" damage="20" range="50" animation="fire" cooldown="60">
       <projectile tile="infg_shot.projectile" animation="infg_shot" offsetY="-4" speed="11" delay="3" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
         <removed>
@@ -193,4 +193,8 @@
       </projectile>
     </attack>
   </enemy>
+
+  <recipe id="human_thrall" object="human_thrall" title="world.human_thrall" fuel_cost="50" type="smelter">
+		<item id="wood" count="1"/>
+	</recipe>
 </data>
