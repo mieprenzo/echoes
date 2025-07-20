@@ -76,13 +76,13 @@
     <image frame="21" x="443" width="19" height="22"/>
   </tilesheet>
 
-  <tile id="crawler" sheet="h_crawler.png" x="0"/>
+  <tile id="hybrid_crawler" sheet="h_crawler.png" x="0"/>
   <tile id="human_thrall" sheet="humanthrall.png" x="0"/>
   <tile id="paramedic" sheet="paramedic.png" x="0"/>
 
-  <animation id="crawler.roar" x="0" count="3"/>
-  <animation id="crawler.idle" x="3" count="3"/>
-  <animation id="crawler.walk" x="6" count="10"/>
+  <animation id="hybrid_crawler.roar" x="0" count="3"/>
+  <animation id="hybrid_crawler.idle" x="3" count="3"/>
+  <animation id="hybrid_crawler.walk" x="6" count="10"/>
   <animation id="human_thrall.idle" x="0" count="4"/>
   <animation id="human_thrall.hit" x="0" count="4"/>
   <animation id="human_thrall.walk" x="4" count="10"/>
@@ -93,7 +93,7 @@
   <animation id="paramedic.walk" x="6" count="10"/>
   <animation id="paramedic.fire" x="16" count="6"/>
 
-  <enemy id="crawler" tile="crawler" type="surface" health="40" range="20" speed="0.2" defense="6">
+  <enemy id="hybrid_crawler" tile="hybrid_crawler" type="golem" health="40" range="20" speed="15" defense="6">
     <run><play object="this" animation="roar" /></run>
     <attack type="melee" damage="20" range="1" ignoreArmor="true" sfx="bandit_knives_hit" animation="roar"/>
     <sound id="attack" value="crawler_roar"/>
