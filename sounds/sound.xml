@@ -5,9 +5,12 @@
 <volume name="infcarrier_attack" value="1000"/>
 <volume name="snek_voice" value="600"/>
 <volume name="dem_voice" value="400"/>
+<volume name="spaceranger_launch" value="400"/>
 <sound id="crawler_roar"/>
 <sound id="thrall_death"/>
 <sound id="infcarrier_attack"/>
 <sound id="snek_voice"/>
 <sound id="dem_voice"/>
+
+<sound id="spaceranger_launch"/>
 </data>
