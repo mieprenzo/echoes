@@ -29,5 +29,8 @@
             <text id="check_dem">you should check out the crash site in captAIn's colony.</text>
             <text id="init_echoes"> Wants you to check out his ship</text>
         </section>
+        <section id="vehicles">
+            <text id="spaceranger">Spaceranger</text>
+        </section>
     </lang>
 </data>
