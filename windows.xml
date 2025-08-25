@@ -8,5 +8,6 @@
                 i++;
             }
         </action>
+        <tile id="'quartz'" x="256/2" y="144/2"/>
     </window>
 </data>

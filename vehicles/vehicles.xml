@@ -1,0 +1,7 @@
+<data>
+    <tilesheet id="spaceranger.png" width="32" height="32" />
+    <tile id="spaceranger" sheet="spaceranger.png"/>
+    <vehicle id="spaceranger">
+
+    </vehicle>
+</data>
