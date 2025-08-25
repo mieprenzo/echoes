@@ -1,7 +1,7 @@
 <data>
     <tilesheet id="spaceranger.png" width="73" height="18" />
     <tile id="spaceranger" sheet="spaceranger.png"/>
-    <vehicle id="spaceranger" speed="12" speedY="8" tile="spaceranger" walk_sfx="spaceranger_launch" health="900" type="spaceship" title="vehicle.spaceranger" underground="false" fuel="5000" flight_height="999">
+    <vehicle id="spaceranger" speed="12" speedY="8" tile="spaceranger" walk_sfx="spaceranger_walk" health="900" type="spaceship" title="vehicle.spaceranger" underground="false" fuel="5000" flight_height="999">
         <fuel id="alloy" fuel="500" />
         <repair id="titanium" value="250" />
         <light tile="light.headlamp" offsetX="-73" />
