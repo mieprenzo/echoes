@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
+  <tilesheet id="h_crawler.png" width="16" height="11">
+    <image frame="0" x="1"/>
+    <image frame="1" x="19"/>
+    <image frame="2" x="37"/>
+    <image frame="3" x="55"/>
+    <image frame="4" x="73"/>
+    <image frame="5" x="91"/>
+    <image frame="6" x="109"/>
+    <image frame="7" x="127"/>
+    <image frame="8" x="145"/>
+    <image frame="9" x="163"/>
+    <image frame="10" x="181"/>
+    <image frame="11" x="198" width="17" offsetX="-1"/>
+    <image frame="12" x="216" width="17" offsetX="-1"/>
+    <image frame="13" x="233" width="18" offsetX="-2"/>
+    <image frame="14" x="253"/>
+    <image frame="15" x="271"/>
+  </tilesheet>
   <tilesheet id="humanthrall.png" width="17" height="22">
     <image frame="0" x="16" width="17" height="22"/>
     <image frame="1" x="49" width="17" height="22"/>
@@ -25,100 +43,115 @@
     <image frame="20" x="693" width="33" height="22" offsetX="-16"/>
     <image frame="21" x="709" width="17" height="22"/>
     <image frame="22" x="742" width="17" height="22"/>
-    <image frame="23" x="777" width="19" height="22"/>
-    <image frame="24" x="825" width="19" height="22"/>
-    <image frame="25" x="858" width="18" height="22"/>
-    <image frame="26" x="891" width="18" height="22"/>
-    <image frame="27" x="940" width="18" height="22"/>
-    <image frame="28" x="973" width="18" height="22"/>
+    <image frame="23" x="775" width="17" height="22"/>
+    <image frame="24" x="806" width="19" height="22"/>
+    <image frame="25" x="839" width="19" height="22"/>
+    <image frame="26" x="873" width="18" height="22"/>
+    <image frame="27" x="906" width="18" height="22"/>
+    <image frame="28" x="939" width="18" height="22"/>
+    <image frame="29" x="972" width="18" height="22"/>
   </tilesheet>
+  <tilesheet id="paramedic.png" width="19" height="22">
+    <image frame="0" x="2" width="19" height="22"/>
+    <image frame="1" x="23" width="19" height="22"/>
+    <image frame="2" x="44" width="19" height="22"/>
+    <image frame="3" x="65" width="19" height="22"/>
+    <image frame="4" x="86" width="19" height="22"/>
+    <image frame="5" x="107" width="19" height="22"/>
+    <image frame="6" x="128" width="19" height="22"/>
+    <image frame="7" x="149" width="19" height="22"/>
+    <image frame="8" x="170" width="19" height="22"/>
+    <image frame="9" x="191" width="19" height="22"/>
+    <image frame="10" x="212" width="19" height="22"/>
+    <image frame="11" x="233" width="19" height="22"/>
+    <image frame="12" x="254" width="19" height="22"/>
+    <image frame="13" x="275" width="19" height="22"/>
+    <image frame="14" x="296" width="19" height="22"/>
+    <image frame="15" x="317" width="19" height="22"/>
+    <image frame="16" x="338" width="19" height="22"/>
+    <image frame="17" x="359" width="19" height="22"/>
+    <image frame="18" x="380" width="19" height="22"/>
+    <image frame="19" x="399" width="21" height="22" offsetX="-2"/>
+    <image frame="20" x="421" width="20" height="22" offsetX="-1"/>
+    <image frame="21" x="443" width="19" height="22"/>
+  </tilesheet>
+
+  <tile id="hybrid_crawler" sheet="h_crawler.png" x="0"/>
   <tile id="human_thrall" sheet="humanthrall.png" x="0"/>
-  <animation id="human_thrall.idle" x="27" count="2"/>
+  <tile id="paramedic" sheet="paramedic.png" x="0"/>
+
+  <animation id="hybrid_crawler.roar" x="0" count="3"/>
+  <animation id="hybrid_crawler.idle" x="3" count="3"/>
+  <animation id="hybrid_crawler.walk" x="6" count="10"/>
+  <animation id="human_thrall.idle" x="0" count="4"/>
   <animation id="human_thrall.hit" x="0" count="4"/>
-  <animation id="human_thrall.walk" x="4" count="11"/>
+  <animation id="human_thrall.walk" x="4" count="10"/>
   <animation id="human_thrall.fire" x="14" count="9"/>
-  <animation id="human_thrall.blade" x="23" count="6"/>
-  <enemy id="human_thrall" tile="human_thrall" type="surface" vertical="true" passEnemies="true" health="50" range="20" speed="0" defense="9" death_sfx="cyborg_death">
-    <attack type="projectile" damage="20" range="12" animation="fire">
-     <projectile tile="exog_shot.projectile" animation="exog_shot" offsetY="-4" speed="5" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
+  <animation id="human_thrall.melee" x="23" count="6"/>
+  <animation id="paramedic.idle" x="0" count="6"/>
+  <animation id="paramedic.hit" x="0" count="6"/>
+  <animation id="paramedic.walk" x="6" count="10"/>
+  <animation id="paramedic.fire" x="16" count="6"/>
+
+  <enemy id="hybrid_crawler" tile="hybrid_crawler" type="golem" health="40" range="20" speed="15" defense="6">
+    <run><play object="this" animation="roar" /></run>
+    <attack type="melee" damage="20" range="1" ignoreArmor="true" sfx="bandit_knives_hit" animation="roar"/>
+    <sound id="attack" value="crawler_roar"/>
+      <lootSet><loot id="ship_parts" count="1"/></lootSet>
+      <lootSet><loot id="meat" count="2"/></lootSet>
+      <loot p="90"/>
+	    <loot id="alloy" p="10"/>
+  </enemy>
+  <enemy id="human_thrall" tile="human_thrall" width="16" type="surface" icon="escort_fighter.ico" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
+    <attack type="projectile" damage="20" range="14" animation="fire">
+      <projectile tile="infg_shot.projectile" animation="infg_shot" offsetY="-4" speed="11" delay="3" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
         <removed>
-			<projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="player.getFacing()" dy="-0.5" color="730021" colorScale="3"  underwater="true">
+			<projectile tile="infg_shot.projectile" animation="infg_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="area.getObject('human_thrall')" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="-area.getObject('human_thrall').getFacing()" dy="-0.5" color="730021" colorScale="3"  underwater="true">
         <light tile="light.small" color="730021" />
 			</projectile>
-      <projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="player.getFacing()" dy="0.5" color="730021" colorScale="3"  underwater="true">
+      <projectile tile="infg_shot.projectile" animation="infg_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="area.getObject('human_thrall')" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="-area.getObject('human_thrall').getFacing()" dy="0.5" color="730021" colorScale="3"  underwater="true">
 				<light tile="light.small" color="730021" />
 			</projectile>
         </removed>
-     </projectile>
+      </projectile>
     </attack>
-     <attack type="melee" damage="20" range="1" ignoreArmor="true" sfx="swords" animation="blade"/>
-  
-    <onDeath>
-    <set id="recruitment" value="randInt(1,4)"/>
-
-    <section if="recruitment == 1">
-     <object id="human_thrall" x="this.tile_x+4" y="this.tile_y"/>
-    </section>
-    <section if="recruitment == 2">
-     <object id="human_thrall2" x="this.tile_x+4" y="this.tile_y"/>
-    </section>
-    <section if="recruitment == 3">
-     <object id="giantgrub" x="this.tile_x+4" y="this.tile_y"/>
-    </section>
-
-   </onDeath>
-   <onDeath>
-
-    <set id="recruitment2" value="randInt(1,4)"/>
-
-    <section if="recruitment2 == 1">
-     <object id="human_thrall" x="this.tile_x+2" y="this.tile_y"/>
-    </section>
-    <section if="recruitment2 == 2">
-     <object id="human_thrall2" x="this.tile_x+2" y="this.tile_y"/>
-    </section>
-    <section if="recruitment2 == 3">
-     <object id="giantgrub" x="this.tile_x+2" y="this.tile_y"/>
-    </section>
-
-   </onDeath>
-   <onDeath>
-
-    <set id="recruitment3" value="randInt(1,4)"/>
-
-    <section if="recruitment3 == 1">
-     <object id="human_thrall" x="this.tile_x+2" y="this.tile_y"/>
-    </section>
-    <section if="recruitment3 == 2">
-     <object id="human_thrall2" x="this.tile_x" y="this.tile_y"/>
-    </section>
-    <section if="recruitment3 == 3">
-     <object id="giantgrub" x="this.tile_x+1" y="this.tile_y"/>
-    </section>
-
-   </onDeath>
+    <attack type="melee" damage="20" range="1" ignoreArmor="true" sfx="bandit_knives_hit" animation="melee"/>
+      <lootSet><loot id="ship_parts" count="1"/></lootSet>
+      <loot p="80"/>
+	    <loot id="alloy" p="20"/>
   </enemy>
 
-  <enemy id="human_thrall2" extends="human_thrall" speed="2" type="golem" vertical="false">
-    <cooldown id="spawn" seconds="400">
-        <set id="recruitment4" value="randInt(1,4)"/>
+   Make function that will improve minAngle maxAngle variant. So like each shot projectile has different angle.
+   
+  <enemy id="inf_carrier" tile="human_thrall" type="surface" vertical="true" passEnemies="true" friendlyFire="false" health="300" range="12" speed="1" defense="9" death_sfx="explosion">
+    <attack type="projectile" animation="fire" range="12" damage="15" fireAll="true" minAngle="-10"  maxAngle="10" cooldown="150">
+     <pre><sound id="infcarrier_attack"/></pre>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="12" delay="2" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="9" delay="4" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="3" delay="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="6" delay="8" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+    </attack>
+
+    <cooldown id="spawn" seconds="4">
+        <set id="recruitment" value="randInt(1,4)"/>
 				<sound id="dragon_atk" /><play object="this" animation="spawn_begin" />
 				<play object="this" animation="spawn_pre" /><set id="dx" value="this.getDX()" />
 
-        <section if="recruitment4 == 1">
-				<object id="minotaur" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
+        <section if="recruitment == 1">
+				<object id="human_thrall" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
 					this.renderer.setTile(this.tile_x+dx, this.tile_y, this.renderer.speed);
 				</object>
         </section>
 
-        <section if="recruitment4 == 2">
+        <section if="recruitment == 2">
 				<object id="giantgrub" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
 					this.renderer.setTile(this.tile_x+dx, this.tile_y, this.renderer.speed);
 				</object>
         </section>
 
-        <section if="recruitment4 == 3">
-				<object id="fire_boar" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
+        <section if="recruitment == 3">
+				<object id="paramedic" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
 					this.renderer.setTile(this.tile_x+dx, this.tile_y, this.renderer.speed);
 				</object>
         </section>
@@ -126,39 +159,174 @@
 				<play object="this" animation="spawn_post" />
 			<action>this.run();</action><stop />
 		</cooldown>
-   <onDeath><stop/></onDeath>
-   <lootSet><loot id="ship_parts" count="1"/></lootSet>
-   <loot p="80"/>
-	 <loot id="alloy" p="20"/>
-  </enemy>
 
-  <enemy id="paramedic" tile="boar" passEnemies="true" type="surface" health="50" range="10" speed="2" defense="9" death_sfx="cyborg_death">
-    <attack type="projectile" tile="exog_shot.projectile" animation="exog_shot" offsetY="-4" speed="5" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
-      <projectile tile="exog_shot.projectile" animation="exog_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" color="730021" colorScale="3"  underwater="true">
+    <onDeath>
+    <set id="d_drop" value="randInt(1,4)"/>
+
+    <section if="d_drop == 1">
+     <object id="human_thrall" x="this.tile_x" y="this.tile_y"/>
+    </section>
+    <section if="d_drop == 2">
+     <object id="human_thrall2" x="this.tile_x" y="this.tile_y"/>
+    </section>
+    <section if="d_drop == 3">
+     <object id="giantgrub" x="this.tile_x" y="this.tile_y"/>
+    </section>
+
+   </onDeath>
+   <onDeath>
+
+    <set id="d_drop2" value="randInt(1,4)"/>
+
+    <section if="d_drop2 == 1">
+     <object id="human_thrall" x="this.tile_x+1" y="this.tile_y"/>
+    </section>
+    <section if="d_drop2 == 2">
+     <object id="human_thrall2" x="this.tile_x+1" y="this.tile_y"/>
+    </section>
+    <section if="d_drop2 == 3">
+     <object id="giantgrub" x="this.tile_x+1" y="this.tile_y"/>
+    </section>
+
+   </onDeath>
+   <onDeath>
+
+    <set id="d_drop3" value="randInt(1,4)"/>
+
+    <section if="d_drop3 == 1">
+     <object id="human_thrall" x="this.tile_x+2" y="this.tile_y"/>
+    </section>
+    <section if="d_drop3 == 2">
+     <object id="human_thrall2" x="this.tile_x+2" y="this.tile_y"/>
+    </section>
+    <section if="d_drop3 == 3">
+     <object id="giantgrub" x="this.tile_x+2" y="this.tile_y"/>
+    </section>
+
+   </onDeath>
+   <onDeath>
+    <object id="paramedic" x="this.tile_x+3" y="this.tile_y"/>
+   </onDeath>
+  </enemy> 
+
+
+
+  <enemy id="paramedic" tile="paramedic" type="surface" vertical="true" passEnemies="true" health="60" range="20" speed="2" defense="12" death_sfx="cyborg_death">
+    <target id="human_thrall"/>
+    <target id="human_thrall2"/>
+    <attack type="projectile" damage="1" range="12" animation="fire">
+      <projectile tile="infg_shot.projectile" animation="infg_shot" damage="1" ignoreArmor="true" range="8" speed="4" fire_sfx="bandit_ranged_attack" color="048f4c" colorScale="3"  underwater="true">
         <onHit>
           <action>
-            trace("object: " + object);
+            object.health = Math.min(object.info.xml.get("health"), Std.parseInt(object.health) + 10);
           </action>
         </onHit>
       </projectile>
     </attack>
   </enemy>
 
-  <enemy id="paramedic" tile="boar" passEnemies="true" type="surface" health="50" range="20" speed="2" defense="9" death_sfx="cyborg_death">
-    <flee id="human_thrall"/>
-    <attack type="projectile" damage="1" tile="exog_shot.projectile" animation="exog_shot" speed="1" fire_sfx="plasma_gun" color="730021" colorScale="3">
-      <projectile tile="exog_shot.projectile" animation="exog_shot" damage="1" range="8" speed="1" spawnX="this.tile_x" spawnY="this.tile_y" spawner="this" relative="false" fire_sfx="camoflora_attack_hit" color="730021" colorScale="3"  underwater="true">
-        <onHit>
-          <action>
-            var maxHealth = object.info.xml.get("health");
-            if(Std.parseInt(object.health) + 10 > Std.parseInt(maxHealth)) {
-              object.health = maxHealth;
-            } else {
-              object.health = Std.parseInt(object.health) + 10;
-            }
-          </action>
-        </onHit>
+  <enemy id="human_thrall2" tile="human_thrall" width="16" type="surface" icon="escort_fighter.ico" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
+    <attack type="breath" damage="20" range="50" animation="fire" cooldown="60">
+      <projectile tile="infg_shot.projectile" animation="infg_shot" offsetY="-4" speed="11" delay="3" fire_sfx="plasma_gun" color="730021" colorScale="3" underwater="true">
+        <removed>
+			<projectile tile="infg_shot.projectile" animation="infg_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="area.getObject('human_thrall')" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="-area.getObject('human_thrall').getFacing()" dy="-0.5" color="730021" colorScale="3"  underwater="true">
+        <light tile="light.small" color="730021" />
+			</projectile>
+      <projectile tile="infg_shot.projectile" animation="infg_shot" damage="20" range="8" speed="3" spawnX="this.tile_x" spawnY="this.tile_y" spawner="area.getObject('human_thrall')" relative="false" fire_sfx="camoflora_attack_hit" knockback="5" dx="-area.getObject('human_thrall').getFacing()" dy="0.5" color="730021" colorScale="3"  underwater="true">
+				<light tile="light.small" color="730021" />
+			</projectile>
+        </removed>
       </projectile>
     </attack>
+    <attack type="projectile" animation="fire" range="12" damage="15" fireAll="true" minAngle="-10"  maxAngle="10" cooldown="150">
+     <pre><sound id="infcarrier_attack"/></pre>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="12" delay="2" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="9" delay="4" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="3" delay="6" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+     <projectile tile="infg_shot.projectile" animation="infg_shot" glow="true" speed="3" offsetY="6" delay="8" hit_sfx="bullet" color="730021" colorScale="3"  underwater="true"/>
+    </attack>
+    <attack type="melee" damage="20" range="1" ignoreArmor="true" sfx="bandit_knives_hit" animation="melee"/>
+      <lootSet><loot id="ship_parts" count="1"/></lootSet>
+      <loot p="80"/>
+	    <loot id="alloy" p="20"/>
+    <cooldown id="spawn" seconds="4">
+      <set id="recruitment" value="randInt(1,4)"/>
+			 <sound id="dragon_atk" /><play object="this" animation="spawn_begin" />
+				<play object="this" animation="spawn_pre" /><set id="dx" value="this.getDX()" />
+
+        <section if="recruitment == 1">
+				 <object id="human_thrall" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
+					this.renderer.setTile(this.tile_x+dx, this.tile_y, this.renderer.speed);
+				 </object>
+        </section>
+
+        <section if="recruitment == 2">
+				 <object id="giantgrub" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
+					this.renderer.setTile(this.tile_x+dx, this.tile_y, this.renderer.speed);
+				 </object>
+        </section>
+
+        <section if="recruitment == 3">
+				 <object id="paramedic" x="dx == -1?this.tile_x+1:this.tile_right-1" y="this.tile_y">
+					this.renderer.setTile(this.tile_x+dx, this.tile_y, this.renderer.speed);
+				 </object>
+        </section>
+
+				<play object="this" animation="spawn_post" />
+			<action>this.run();</action><stop />
+		</cooldown>
+
+    <onDeath>
+     <set id="d_drop" value="randInt(1,4)"/>
+
+     <section if="d_drop == 1">
+      <object id="human_thrall" x="this.tile_x" y="this.tile_y"/>
+     </section>
+     <section if="d_drop == 2">
+      <object id="human_thrall2" x="this.tile_x" y="this.tile_y"/>
+     </section>
+     <section if="d_drop == 3">
+      <object id="giantgrub" x="this.tile_x" y="this.tile_y"/>
+     </section>
+
+    </onDeath>
+    <onDeath>
+
+     <set id="d_drop2" value="randInt(1,4)"/>
+
+     <section if="d_drop2 == 1">
+      <object id="human_thrall" x="this.tile_x+1" y="this.tile_y"/>
+     </section>
+     <section if="d_drop2 == 2">
+      <object id="human_thrall2" x="this.tile_x+1" y="this.tile_y"/>
+     </section>
+     <section if="d_drop2 == 3">
+      <object id="giantgrub" x="this.tile_x+1" y="this.tile_y"/>
+     </section>
+
+    </onDeath>
+    <onDeath>
+
+     <set id="d_drop3" value="randInt(1,4)"/>
+
+     <section if="d_drop3 == 1">
+      <object id="human_thrall" x="this.tile_x+2" y="this.tile_y"/>
+     </section>
+     <section if="d_drop3 == 2">
+      <object id="human_thrall2" x="this.tile_x+2" y="this.tile_y"/>
+     </section>
+     <section if="d_drop3 == 3">
+      <object id="giantgrub" x="this.tile_x+2" y="this.tile_y"/>
+     </section>
+
+    </onDeath>
+    <onDeath>
+      <object id="paramedic" x="this.tile_x+3" y="this.tile_y"/>
+    </onDeath>  
   </enemy>
+
+  <recipe id="human_thrall" object="human_thrall" title="world.human_thrall" fuel_cost="50" type="smelter">
+		<item id="wood" count="1"/>
+	</recipe>
 </data>

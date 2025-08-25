@@ -19,24 +19,32 @@
     <image frame="12" x="168" width="14" height="19"  offsetX="-2" offsetY="6"/>
     <image frame="13" x="182" width="14" height="19"  offsetX="-2" offsetY="6"/>
     </tilesheet>
+    <tilesheet id="infg_shot.png" width="21" height="5">
+     <image frame="0" x="0" width="21" height="5"/>
+     <image frame="1" x="29" width="21" height="5"/>
+     <image frame="2" x="59" width="23" height="5"/>
+     <image frame="3" x="88" width="30" height="5"/>
+    </tilesheet>
     
     <tile id="mvmap.ico" sheet="mvmap.png" x="0" />
     <tile id="pmconstr.ico" sheet="pmconstr.png" x="0" />
     <tile id="alloy.ico" sheet="alloy.png" x="0" />
     <tile id="nanoblade" sheet="nanoblade.png"/>
     <tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="5" offsetY="-7" />
+    <tile id="infg_shot.projectile" sheet="infg_shot.png" x="0"/>
 
     <animation id="mvmap.idle" x="0" count="12" />
     <animation id="pmconstr.idle" x="0" count="3" />
     <animation id="alloy.idle" x="0" count="5" />
     <animation id="equipment.nanoblade.idle" x="0" count="1"/>
     <animation id="equipment.nanoblade" x="1" count="13"/>
+    <animation id="infg_shot" count="4"/>
 
     <item id="mvmap" icon="mvmap.ico" animation="mvmap.idle" />
     <item id="pmconstr" icon="pmconstr.ico" animation="pmconstr.idle" />
     <item id="alloy" icon="alloy.ico" animation="pmconstr.idle" />
     <item id="nanoblade" fps="60" type="equipment" slot="weapon" cost="777" durability="2000" weight="8" stamina="2" action="equip" range="1" attack="20" knockback="5" repair="alloy" movement_walk="walk_rswing" sounds="sword" icon="nanoblade.ico">
-        <projectile tile="fireball_small" speed="2" offsetY="5" knockback="5" ignoreArmor="true" color="4c1199" colorScale="3" hit_sfx="sword"/>
+        <projectile tile="fireball_small" speed="2" offsetY="5" knockback="5" ignoreArmor="true" color="4c1199" colorScale="3" hit_sfx="bandit_knives_hit"/>
         <onEquip>
             <action>
                 fpsTrigger(this.info.xml.get("fps"));

@@ -17,6 +17,7 @@
         <include id="item/item.xml"/>
         <include id="enemy/enemy.xml"/>
         <include id="achievements/achievements.xml"/>
+        <include id="sounds/sound.xml"/>
 
         <onLoad>
             <section if="!getFlag('snek_spawned')">
