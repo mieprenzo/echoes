@@ -5,7 +5,7 @@
 <volume name="infcarrier_attack" value="1000"/>
 <volume name="snek_voice" value="600"/>
 <volume name="dem_voice" value="400"/>
-<volume name="spaceranger_walk" value="400"/>
+<volume name="spaceranger_walk" value="4000"/>
 <sound id="crawler_roar"/>
 <sound id="thrall_death"/>
 <sound id="infcarrier_attack"/>
