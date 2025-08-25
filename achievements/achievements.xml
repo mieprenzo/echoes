@@ -1,0 +1,8 @@
+<data>
+    <structure id="dim_fac_ach" width="32" height="32" image="dimensional_factory.png" layer="top" behind="false">
+        <tooltip id="achievements"/>
+        <operate>
+            <window id="achievements"/>
+        </operate>
+    </structure>
+</data>
