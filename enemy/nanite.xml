@@ -1,19 +1,36 @@
 <data>
 
-  <object id="nanites" tile="emp" animation="emp" layer="top" fps="10" removeOnComplete="true" save="false" color="168c44" colorScale="5">
-        
-        <addedToArea><action>
-          count = 0.0; hybrids = ["human_thrall", "human_thrall2", "paramedic"];
-        </action></addedToArea>
-        <onFrame>
-            count += frames;
-            if(count >= 15){
-                if (hybrids.indexOf(o.info.id) != -1){
-                o.heal(5, FLAG_IGNORE_DEFENSE|FLAG_HIDE_ATTACKER, spawner);
+    <object id="nanites" name="nanites" tile="boar" layer="top" fps="10" save="false" color="168c44"
+        colorScale="5">
+        <addedToArea>
+            <action>
+                var hybrids = ["human_thrall", "human_thrall2", "paramedic"];
+                var target = null;
+                for(hybrid in hybrids) {
+                    var object = area.getObject(hybrid);
+                    if(object != null) {
+                        var target = object;
+                        Movement.seek(this, object, 4, true)
+                    }
                 }
-            }
-        </onFrame>
-      </object>
+            </action>
+        </addedToArea>
+
+        <over>
+            <action>
+                var object = target
+                var maxHealth = object.info.xml.get("health");
+                if(Std.parseInt(object.health) + 10 > Std.parseInt(maxHealth)) {
+                object.health = maxHealth;
+                } else {
+                object.health = Std.parseInt(object.health) + 10;
+                }
+            </action>
+			<hitEffect object="this" tile="magic_orb" animation="magic_orb.impact" />
+			<remove object="this" />
+		</over>
+    </object>
 </data>
 
 <!-- <object id="nanites"/>-->
+<!-- <object id="human_thrall"/>-->

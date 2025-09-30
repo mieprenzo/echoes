@@ -225,9 +225,6 @@
         </onHit>
       </projectile>
     </attack>
-    <action>
-      renderer.set_scaleX(2)
-    </action>
   </enemy>
 
   <enemy id="human_thrall2" tile="human_thrall" width="16" type="surface" icon="escort_fighter.ico" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
