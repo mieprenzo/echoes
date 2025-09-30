@@ -6,12 +6,4 @@
         <repair id="titanium" value="250" />
         <light tile="light.headlamp" offsetX="-73" />
     </vehicle>
-
-    <tilesheet id="vwgolf.png" width="64" height="26" />
-    <tile id="vwgolf" sheet="vwgolf.png"/>
-    <vehicle id="vwgolf" speed="12" speedY="8" tile="vwgolf" health="900" type="object" title="vehicle.vwgolf" underground="true" fuel="5000" walk_sfx="stealth_tank">
-        <fuel id="coal" fuel="500" />
-        <repair id="titanium" value="250" />
-        <light tile="light.headlamp" offsetX="-64" />
-    </vehicle>
 </data>

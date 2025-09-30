@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
+<include id="nanite.xml"/>
+
   <tilesheet id="h_crawler.png" width="16" height="11">
     <image frame="0" x="1"/>
     <image frame="1" x="19"/>
@@ -223,6 +225,9 @@
         </onHit>
       </projectile>
     </attack>
+    <action>
+      renderer.set_scaleX(2)
+    </action>
   </enemy>
 
   <enemy id="human_thrall2" tile="human_thrall" width="16" type="surface" icon="escort_fighter.ico" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
