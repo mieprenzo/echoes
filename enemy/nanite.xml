@@ -4,33 +4,35 @@
         colorScale="5">
         <addedToArea>
             <action>
-                var hybrids = ["human_thrall", "human_thrall2", "paramedic"];
-                var target = null;
-                for(hybrid in hybrids) {
+                count = 0.0;
+                hybrids = ["human_thrall", "human_thrall2", "paramedic"];
+                target = null;
+
+                for (hybrid in hybrids) {
                     var object = area.getObject(hybrid);
-                    if(object != null) {
-                        var target = object;
-                        Movement.seek(this, object, 4, true)
+                    if (object != null) {
+                        target = object;
+                        Movement.seek(this, object, 8, true);
                     }
+                }
+                function canDamage(o){
+                    return o.attackPower(1, 1, 0, null, false) > 0 &amp;&amp; o.getDefense(false, false, false) &lt; 16;
                 }
             </action>
         </addedToArea>
-
-        <over>
-            <action>
-                var object = target
-                var maxHealth = object.info.xml.get("health");
-                if(Std.parseInt(object.health) + 10 > Std.parseInt(maxHealth)) {
-                object.health = maxHealth;
-                } else {
-                object.health = Std.parseInt(object.health) + 10;
+        <onFrame>
+              count += frames;
+            if(count >= 9){
+                for(o in this.getOverlappingObjects(canDamage)) {
+                    count -= 9;
+                    if (hybrids.indexOf(o.info.id) != -1){
+                        o.heal(10);
+                        this.removeObject(this.info.id);
+                    }
                 }
-            </action>
-			<hitEffect object="this" tile="magic_orb" animation="magic_orb.impact" />
-			<remove object="this" />
-		</over>
+            }
+        </onFrame>
     </object>
 </data>
 
-<!-- <object id="nanites"/>-->
-<!-- <object id="human_thrall"/>-->
+<!--<object id="nanites"/><object id="human_thrall"/>-->
