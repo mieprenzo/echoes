@@ -214,17 +214,14 @@
 
 
   <enemy id="paramedic" tile="paramedic" type="surface" vertical="true" passEnemies="true" health="60" range="20" speed="2" defense="12" death_sfx="cyborg_death">
-    <target id="human_thrall"/>
-    <target id="human_thrall2"/>
-    <attack type="projectile" damage="1" range="12" animation="fire">
-      <projectile tile="infg_shot.projectile" animation="infg_shot" damage="1" ignoreArmor="true" range="8" speed="4" fire_sfx="bandit_ranged_attack" color="048f4c" colorScale="3"  underwater="true">
-        <onHit>
-          <action>
-            object.health = Math.min(object.info.xml.get("health"), Std.parseInt(object.health) + 10);
-          </action>
-        </onHit>
-      </projectile>
+    <attack type="projectile" damage="15" range="12" animation="fire">
+      <projectile tile="parrow.projectile" damage="15" range="8" speed="3" fire_sfx="bandit_ranged_attack" underwater="true"/>
     </attack>
+    <cooldown id="spawn" seconds="4">
+    <sound id="dragon_atk" />
+     <object id="nanites" x="this.tile_x" y="this.tile_y+1"/>
+     <object id="nanites" x="this.tile_x" y="this.tile_y-1"/>
+    </cooldown>
   </enemy>
 
   <enemy id="human_thrall2" tile="human_thrall" width="16" type="surface" icon="escort_fighter.ico" vertical="true" health="50" friendlyFire="false" range="20" speed="2" defense="9" death_sfx="thrall_death">
