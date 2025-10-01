@@ -25,6 +25,7 @@
      <image frame="2" x="59" width="23" height="5"/>
      <image frame="3" x="88" width="30" height="5"/>
     </tilesheet>
+    <tilesheet id="parrow.png" width="16" height="10"/>
     
     <tile id="mvmap.ico" sheet="mvmap.png" x="0" />
     <tile id="pmconstr.ico" sheet="pmconstr.png" x="0" />
@@ -32,6 +33,7 @@
     <tile id="nanoblade" sheet="nanoblade.png"/>
     <tile id="nanoblade.ico" sheet="nanoblade.png" offsetX="5" offsetY="-7" />
     <tile id="infg_shot.projectile" sheet="infg_shot.png" x="0"/>
+    <tile id="parrow.projectile" sheet="parrow.png" x="0"/>
 
     <animation id="mvmap.idle" x="0" count="12" />
     <animation id="pmconstr.idle" x="0" count="3" />
