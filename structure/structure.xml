@@ -3,7 +3,11 @@
     <structure id="cdship" width="68" height="18" image="cdship.png" priority="-2" behind="true" remove="false">
         <tooltip id="operate"/>
         <operate>
-            <window id="inspect_ship"/>
+
+            <section if="!player.questComplete('init_echoes')">
+                <window id="inspect_ship"/>
+            </section>
+            
         </operate>
     </structure>
 </data>

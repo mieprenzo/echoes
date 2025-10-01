@@ -2,29 +2,63 @@
     <tilesheet id="structure/cdship.png" width="68" height="18"/>
     <tile id="cdship" sheet="structure/cdship.png"/>
     <window id="inspect_ship" width="256" height="144" closeable="true">
+        <section>
+            <action>window.doClose()</action>
+            <complete quest="init_echoes"/>
+        </section>
         <action>
-            evalXml('&lt;rect x="' + ((256/2)-(68/2)-20) + '" y="' + ((144/2)-18-20) + '" width="20" height="1" color="0e3801"/&gt;'); // Top
-            evalXml('&lt;rect x="' + ((256/2)-(68/2)-20) + '" y="' + (((144/2)-18)+19-20) + '" width="20" height="1" color="0e3801"/&gt;'); // Bottom
-            evalXml('&lt;rect x="' + ((256/2)-(68/2)-20) + '" y="' + (((144/2)-18)+1-20) + '" width="1" height="18" color="0e3801"/&gt;'); // Left
-            evalXml('&lt;rect x="' + (((256/2)-(68/2))-1) + '" y="' + (((144/2)-18)+1-20) + '" width="1" height="18" color="0e3801"/&gt;'); // Right
-        
-            var i = 0;
-            while (i &lt; 20) {
-                evalXml('&lt;rect x="' + ((256/2)-(68/2) + i) + '" y="' + ((144/2)-18 + i) + '" width="1" height="1" color="0e3801"/&gt;');
-                i++;
+
+            if(getFlag('dem_collected_constructor') != true) {
+                evalXml('&lt;rect x="' + ((256/2)-(68/2)-20) + '" y="' + ((144/2)-18-20) + '" width="20" height="1" color="0e3801"/&gt;'); // Top
+                evalXml('&lt;rect x="' + ((256/2)-(68/2)-20) + '" y="' + (((144/2)-18)+19-20) + '" width="20" height="1" color="0e3801"/&gt;'); // Bottom
+                evalXml('&lt;rect x="' + ((256/2)-(68/2)-20) + '" y="' + (((144/2)-18)+1-20) + '" width="1" height="18" color="0e3801"/&gt;'); // Left
+                evalXml('&lt;rect x="' + (((256/2)-(68/2))-1) + '" y="' + (((144/2)-18)+1-20) + '" width="1" height="18" color="0e3801"/&gt;'); // Right
+            
+                var i = 0;
+                while (i &lt; 20) {
+                    evalXml('&lt;rect x="' + ((256/2)-(68/2) + i) + '" y="' + ((144/2)-18 + i) + '" width="1" height="1" color="0e3801"/&gt;');
+                    i++;
+                }
             }
 
-            evalXml('&lt;rect x="' + ((256/2)+(68/2)+17) + '" y="' + ((144/2)+20) + '" width="20" height="1" color="0e3801"/&gt;'); // Top
-            evalXml('&lt;rect x="' + ((256/2)+(68/2)+17) + '" y="' + (((144/2))+20+18) + '" width="20" height="1" color="0e3801"/&gt;'); // Bottom
-            evalXml('&lt;rect x="' + ((256/2)+(68/2)+17) + '" y="' + (((144/2))+20) + '" width="1" height="18" color="0e3801"/&gt;'); // Left
-            evalXml('&lt;rect x="' + (((256/2)+(68/2))+17+19) + '" y="' + (((144/2))+20) + '" width="1" height="18" color="0e3801"/&gt;'); // Right
-        
-            var i = 0;
-            while (i &lt; 20) {
-                evalXml('&lt;rect x="' + ((256/2)+(68/2)-3 + i) + '" y="' + ((144/2) + i) + '" width="1" height="1" color="0e3801"/&gt;');
-                i++;
+            if(getFlag('dem_collected_alloy') != true) {
+                evalXml('&lt;rect x="' + ((256/2)+(68/2)+17) + '" y="' + ((144/2)+20) + '" width="20" height="1" color="0e3801"/&gt;'); // Top
+                evalXml('&lt;rect x="' + ((256/2)+(68/2)+17) + '" y="' + (((144/2))+20+18) + '" width="20" height="1" color="0e3801"/&gt;'); // Bottom
+                evalXml('&lt;rect x="' + ((256/2)+(68/2)+17) + '" y="' + (((144/2))+20) + '" width="1" height="18" color="0e3801"/&gt;'); // Left
+                evalXml('&lt;rect x="' + (((256/2)+(68/2))+17+19) + '" y="' + (((144/2))+20) + '" width="1" height="18" color="0e3801"/&gt;'); // Right
+            
+                var i = 0;
+                while (i &lt; 20) {
+                    evalXml('&lt;rect x="' + ((256/2)+(68/2)-3 + i) + '" y="' + ((144/2) + i) + '" width="1" height="1" color="0e3801"/&gt;');
+                    i++;
+                }
             }
         </action>
         <tile id="'cdship'" x="256/2-(68/2)" y="144/2-(18/2)"/>
+
+        <button x="75" y="35" height="18" width="18" if="getFlag('dem_collected_constructor') != true">
+            <onSelect>
+                <action>
+                    player.addItem('pmconstr');
+                    setFlag('dem_collected_constructor', true);
+                    window.doClose();
+                </action>
+                <window id="inspect_ship" animate="false"/>
+            </onSelect>
+            <tile id="'pmconstr.ico'" x="1" y="4"/>
+        </button>
+
+        <button x="180" y="93" height="17" width="18" if="getFlag('dem_collected_alloy') != true">
+            <onSelect>
+                <action>
+                    player.addItem('alloy', 3);
+                    setFlag('dem_collected_alloy', true);
+                    window.doClose();
+                </action>
+                <window id="inspect_ship" animate="false"/>
+            </onSelect>
+            <tile id="'alloy.ico'" x="1" y="3"/>
+        </button>
+
     </window>
 </data>
