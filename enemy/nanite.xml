@@ -5,7 +5,7 @@
         <addedToArea>
             <action>
                 count = 0.0;
-                hybrids = ["human_thrall", "human_thrall2", "paramedic"];
+                hybrids = ["human_thrall", "human_thrall2"];
                 target = null;
 
                 for (hybrid in hybrids) {
