@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
+    <tilesheet id="cdship.png" width="16" height="10" />
+    <tile id="cdship.ico" sheet="cdship.png" x="0" scale="0.5"/>
     <structure id="cdship" width="68" height="18" image="cdship.png" priority="-2" behind="true" remove="false">
         <tooltip id="operate"/>
         <operate>

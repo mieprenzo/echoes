@@ -44,6 +44,9 @@
     <script name="quests.check_dem_req" id="getFlag('dem_spoken')"/>
   </quest>
 
+  <quest id="fix_spaceranger" giver="dem" exp="1000">
+  </quest>
+
   <npc id="dem" tile="dem" action="talk" night="true">
     <operate>
       <section if="getFlag('final_boss_defeat') && !player.hasQuest('init_echoes')">
@@ -58,6 +61,18 @@
           setFlag("dem_spoken", true)
         </action>
         <complete quest="check_dem" />
+      </section>
+
+      <section if="!player.hasQuest('fix_spaceranger')">
+        <dialogue section="dem" id="fix_spaceranger1"/>
+        <dialogue section="dem" id="fix_spaceranger2"/>
+        <dialogue section="dem" id="fix_spaceranger3"/>
+        <quest id="fix_spaceranger" />
+      </section>
+
+      <section if="!player.questComplete('fix_spaceranger')">
+        <dialogue section="dem" id="fix_spaceranger2"/>
+        <dialogue section="dem" id="fix_spaceranger3"/>
       </section>
     </operate>
 

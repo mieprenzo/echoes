@@ -19,15 +19,22 @@
             <text id="init1">I am glad you are here, I need your help.</text>
             <text id="init2">I was flying by and I crashed on this planet.</text>
             <text id="init3">The spaceship is broken and i am not very technical. Can you check it for me?</text>
+
+            <text id="fix_spaceranger1">Great, you got the resources from the crashed ship!</text>
+            <text id="fix_spaceranger2">Next up we need to repair the [tile=cdship.ico] spaceranger.</text>
+            <text id="fix_spaceranger3">You can use the [item=pmconstr] to create the needed materials.</text>
+            
         </section>
         <section id="quests">
             <text id="check_dem_req">Crash site checked</text>
             <text id="check_dem">Something crashed?</text>
             <text id="init_echoes">Check the crashed ship</text>
+            <text id="fix_spaceranger">Fix the crashed ship</text>
         </section>
         <section id="quest.description">
             <text id="check_dem">you should check out the crash site in captAIn's colony.</text>
-            <text id="init_echoes"> Wants you to check out his ship</text>
+            <text id="init_echoes"> Wants you to check out his ship!</text>
+            <text id="fix_spaceranger">needs his spaceship repaired!</text>
         </section>
         <section id="vehicles">
             <text id="spaceranger">Spaceranger</text>
