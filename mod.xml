@@ -20,6 +20,9 @@
         <include id="sounds/sound.xml"/>
         <include id="vehicles/vehicles.xml"/>
 
+        <include id="planets/echofern.xml"/>
+        <include id="intro/intro.xml"/>
+
         <onLoad>
             <section if="!getFlag('snek_spawned')">
                 <object id="snek" x="106" y="22" area="colony.orbit.station" />

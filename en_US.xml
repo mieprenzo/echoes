@@ -39,5 +39,15 @@
         <section id="vehicles">
             <text id="spaceranger">Spaceranger</text>
         </section>
+
+        <section id="system">
+            <text id="echofern">Echofern</text>
+        </section>
+        <section id="system.desc">
+            <text id="echofern"></text>
+        </section>
+        <section id="system.planet">
+            <text id="echofern.main">Echofern</text>
+    </section>
     </lang>
 </data>
