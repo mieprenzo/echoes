@@ -1,10 +1,10 @@
 <data>
     <scene id="echoes">
-        <tilesheet id="intro.png" width="512" height="144"/>
+        <tilesheet id="intro.png" width="256" height="144"/>
         <tile id="intro" sheet="intro.png" x="0"/>
         <animation id="intro">
-            <frame x="0" length="30"/>
-            <frame x="1" length="30"/>
+            <frame x="0" length="40"/>
+            <frame x="1" length="40"/>
         </animation>
 
         <layer id="intro" tile="intro" animation="intro" width="512" height="144"/>
@@ -13,8 +13,8 @@
             <action>player.fullRestore();</action>
             
             <layer id="intro"/>
-            <wait seconds="10" />
+            <wait seconds="8" />
         </show>
     </scene>
 </data>
-<!--<scene id="echoes" show="intro">-->
+<!--<scene id="echoes" show="intro"/>-->

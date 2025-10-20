@@ -17,10 +17,18 @@
     <planet id="echofern.main" height="80" tile="planet10" offsetX="13" offsetY="15" name="system.planet.echofern.main">
         <orbit id="echofern.orbit" width="256" height="64" background="alien_hq.orbit" name="system.planet.echofern_orbit" type="none">
 			<area id="echofern" x="0" />
+            <init>
+                <section if="getFlag('echoes_introduced') != 1">
+                    <action>
+                        setFlag('echoes_introduced', 1);
+                    </action>
+                    <scene id="echoes" show="intro"/>
+                </section>
+            </init>            
             <onLoad>
-      <music id="orbit" seconds="1" />
-      <radar tile="orbit.radar" animation="orbit.radar" padding="2" />
-    </onLoad>aa
+                <music id="orbit" seconds="1" />
+                <radar tile="orbit.radar" animation="orbit.radar" padding="2" />
+            </onLoad>
 		</orbit>
     </planet>
 
