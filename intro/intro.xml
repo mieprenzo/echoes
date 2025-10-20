@@ -4,7 +4,7 @@
         <tile id="intro" sheet="intro.png" x="0"/>
         <animation id="intro">
             <frame x="0" length="40"/>
-            <frame x="1" length="40"/>
+            <frame x="1" length="50"/>
         </animation>
 
         <layer id="intro" tile="intro" animation="intro" width="512" height="144"/>

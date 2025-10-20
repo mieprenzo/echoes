@@ -11,7 +11,7 @@
 			<tile id="sun" animation="sun" fps="5" rise="5" set="20" dir="left" pathHeight="96" pathTop="-16" sun="true" />
 		</layer>
 
-        <layer p="0.225" py="0.5"><tile sheet="bg" x="0" /></layer>
+        <layer p="0.9" py="0.9"><tile sheet="bg" x="0" /></layer>
 	</parallax>
 
     <planet id="echofern.main" height="80" tile="planet10" offsetX="13" offsetY="15" name="system.planet.echofern.main">
