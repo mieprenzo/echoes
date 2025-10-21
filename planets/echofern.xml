@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data>
+    <include id="tiles.xml" includeroot="true"/>
+
     <tilesheet id='bg' sheet='parallax.png' width='1071' height='96'>
         <image frame='0' x='0' y='0' width='1071' height='96' offsetY='26' />
     </tilesheet>
@@ -43,9 +45,13 @@
 
     <area id="echofern" planet="echofern.main" width="1071" height="96" background="echofern"
         looping="true">
-        <tiles id="stone" start="0" end="1" />
-        <tiles id="grass" y="0" />
-        <tiles id="bedrock" y="95" />
+        <tiles id="g_dirt1" start="0" end="0.25"/>
+        <tiles id="g_rock" start="0.25" end="1"/>
+        <tiles id="g_grass" y="0"/>
+        <tiles id="blackstone" y="95" />
+        <spawner id="hybrid_crawler" time="1000" count="3" fromX="3" toX="1071" fromY="-1" toY="-1" />
+        <spawner id="human_thrall" time="1000" count="3" fromX="3" toX="1071" fromY="-1" toY="-1" />
+        <spawner id="paramedic" time="1000" count="3" fromX="3" toX="1071" fromY="-1" toY="-1" />
         <init>
             <runAreaLoad />
         </init>
