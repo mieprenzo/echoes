@@ -12,5 +12,7 @@
 <sound id="snek_voice"/>
 <sound id="dem_voice"/>
 
+<music id="dreadful" />
+
 <sound id="spaceranger_walk"/>
 </data>

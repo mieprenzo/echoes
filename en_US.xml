@@ -21,7 +21,7 @@
             <text id="init3">The spaceship is broken and i am not very technical. Can you check it for me?</text>
 
             <text id="fix_spaceranger1">Great, you got the resources from the crashed ship!</text>
-            <text id="fix_spaceranger2">Next up we need to repair the [tile=cdship.ico] spaceranger.</text>
+            <text id="fix_spaceranger2">Next up we need to repair the [color=770000]spaceranger[/color].</text>
             <text id="fix_spaceranger3">You can use the [item=pmconstr] to create the needed materials.</text>
             
         </section>
