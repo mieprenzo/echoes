@@ -57,6 +57,7 @@
         </init>
         <onLoad>
             <weather type="snow" height="0" />
+            <music id="dreadful" seconds="1" />
         </onLoad>
     </area>
 </data>
