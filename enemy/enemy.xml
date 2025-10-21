@@ -218,7 +218,7 @@
       <projectile tile="parrow.projectile" damage="15" range="8" speed="3" fire_sfx="bandit_ranged_attack" underwater="true"/>
     </attack>
     <cooldown id="spawn" seconds="4">
-    <sound id="dragon_atk" />
+    <sound id="goggles" />
      <object id="nanites" x="this.tile_x" y="this.tile_y+1"/>
      <object id="nanites" x="this.tile_x" y="this.tile_y-1"/>
     </cooldown>

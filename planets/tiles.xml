@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+<tilesheet id="tiles.png" width="16" height="16"/>
+<tile id="g_grass" sheet="tiles.png" x="0"/>
+<tile id="g_dirt1" sheet="tiles.png" x="1"/>
+<tile id="g_dirt2" sheet="tiles.png" x="2"/>
+<tile id="g_sand" sheet="tiles.png" x="3"/>
+<tile id="gy_rock" sheet="tiles.png" x="4"/>
+<tile id="g_rock" sheet="tiles.png" x="5"/>
+<tile id="g_mud" sheet="tiles.png" x="6"/>
+<dig id="g_grass" cost="0"/>
+<dig id="g_dirt1" cost="0"/>
+<dig id="g_dirt2" cost="0"/>
+<dig id="g_sand" cost="1"/>
+<dig id="gy_rock" cost="2"/>
+<dig id="g_rock" cost="3"/>
+<dig id="g_mud" cost="4"/>
+</data>
