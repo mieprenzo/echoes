@@ -40,7 +40,7 @@
 
         <button x="75" y="35" height="18" width="18" if="getFlag('dem_collected_constructor') != true">
             <onSelect>
-                <item id="pmconstr" value="0"/>
+                <item id="pmconstr" value="0  "/>
                 <action>
                     setFlag('dem_collected_constructor', true);
                     window.doClose();

@@ -28,7 +28,7 @@
                 </section>
             </init>            
             <onLoad>
-                <music id="orbit" seconds="1" />
+                <music id="dread_fight" seconds="1" />
                 <radar tile="orbit.radar" animation="orbit.radar" padding="2" />
             </onLoad>
 		</orbit>
@@ -57,7 +57,7 @@
         </init>
         <onLoad>
             <weather type="snow" height="0" />
-            <music id="dreadful" seconds="1" />
+            <music id="dread_fight" />
         </onLoad>
     </area>
 </data>
